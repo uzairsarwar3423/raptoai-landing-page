@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: hsl(60 9% 98%);
+  --color-paper-raised: hsl(0 0% 100%);
+  --color-paper-sunken: hsl(60 8% 95%);
+  --color-canvas-dark: hsl(160 14% 7%);
+  --color-canvas-dark-raised: hsl(160 12% 10%);
+
+  --color-ink-900: hsl(160 10% 12%);
+  --color-ink-700: hsl(160 6% 30%);
+  --color-ink-500: hsl(160 4% 48%);
+  --color-ink-300: hsl(160 4% 72%);
+  --color-ink-on-dark: hsl(60 9% 96%);
+  --color-ink-on-dark-muted: hsl(160 6% 68%);
+
+  --color-brand-25: hsl(149 55% 97%);
+  --color-brand-50: hsl(149 60% 93%);
+  --color-brand-100: hsl(149 58% 85%);
+  --color-brand-300: hsl(149 45% 55%);
+  --color-brand-500: hsl(149 62% 32%);
+  --color-brand-600: hsl(149 68% 25%);
+  --color-brand-700: hsl(149 72% 18%);
+  --color-brand-900: hsl(152 45% 8%);
+
+  --color-ember-400: hsl(28 92% 62%);
+  --color-ember-500: hsl(24 90% 54%);
+  --color-ember-600: hsl(20 85% 46%);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --text-display-xl: clamp(2.75rem, 5vw, 4.5rem);
+  --text-display-l: clamp(2.25rem, 3.5vw, 3.25rem);
+  --text-display-m: 1.75rem;
+  --text-body-l: 1.125rem;
+  --text-body-s: 0.875rem;
+  --text-mono-s: 0.8125rem;
+}
+
+@layer utilities {
+  .shadow-tier-1 { box-shadow: 0 1px 3px hsl(160 20% 8% / 0.06), 0 1px 2px hsl(160 20% 8% / 0.04); }
+  .shadow-tier-2 { box-shadow: 0 4px 16px hsl(160 20% 8% / 0.08), 0 2px 4px hsl(160 20% 8% / 0.04); }
+  .shadow-tier-3 { box-shadow: 0 16px 48px hsl(160 20% 8% / 0.16), 0 4px 12px hsl(160 20% 8% / 0.08); }
+  .shadow-cta-glow { box-shadow: 0 8px 24px -4px hsl(24 90% 54% / 0.25); }
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink-900);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@layer utilities {
+  @keyframes status-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(149 62% 32% / 0.5); }
+    50%      { box-shadow: 0 0 0 5px hsl(149 62% 32% / 0); }
+  }
+  .animate-status-pulse {
+    animation: status-pulse 2.4s ease-in-out infinite;
+  }
+}
