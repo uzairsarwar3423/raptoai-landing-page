@@ -10,12 +10,21 @@ export const fadeUpVariant: Variants = {
   },
 };
 
-export const staggerContainer: Variants = {
+export const revealUp: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: springs.reveal
+  },
+};
+
+export const staggerContainer = (staggerChildren: number = 0.08): Variants => ({
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren,
     },
   },
-};
+});

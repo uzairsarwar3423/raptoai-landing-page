@@ -49,6 +49,11 @@
   .shadow-tier-2 { box-shadow: 0 4px 16px hsl(160 20% 8% / 0.08), 0 2px 4px hsl(160 20% 8% / 0.04); }
   .shadow-tier-3 { box-shadow: 0 16px 48px hsl(160 20% 8% / 0.16), 0 4px 12px hsl(160 20% 8% / 0.08); }
   .shadow-cta-glow { box-shadow: 0 8px 24px -4px hsl(24 90% 54% / 0.25); }
+  
+  .cost-stats-bg-pattern {
+    background-image: radial-gradient(circle, hsl(160 10% 12% / 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
 }
 
 body {
