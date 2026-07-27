@@ -35,6 +35,6 @@ export const navLinks = [
 ] as const;
 
 export const navCTA = {
-  secondary: { label: "Log in", href: "https://app.rapto.ai/login" },
-  primary: { label: "Start free trial", href: "https://app.rapto.ai/register" },
+  secondary: { label: "Log in", href: "https://app.rapto.cloud/login" },
+  primary: { label: "Start free trial", href: "https://app.rapto.cloud/register" },
 } as const;

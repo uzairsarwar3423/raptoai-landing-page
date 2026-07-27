@@ -22,9 +22,12 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-            <button className="px-8 py-3.5 rounded-full bg-white text-[var(--color-canvas-dark)] font-semibold hover:bg-white/90 transition-colors">
+            <a
+              href="https://app.rapto.cloud/register"
+              className="px-8 py-3.5 rounded-full bg-white text-[var(--color-canvas-dark)] font-semibold hover:bg-white/90 transition-colors inline-block text-center"
+            >
               {heroContent.ctaPrimary}
-            </button>
+            </a>
             <button className="relative group px-8 py-3.5 rounded-full text-white font-semibold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 overflow-hidden bg-[#0A0A0A]">
 
               {/* Rotating neon background (Creates the animated border) */}
