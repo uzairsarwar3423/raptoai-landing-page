@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { displayFont, interVariable, jetbrainsMono } from "@/lib/fonts";
 import { MotionProvider } from "@/components/providers/MotionProvider";
 import { Navbar } from "@/components/nav/Navbar";
+import { CookieConsent } from "@/components/ui/cookie-consent";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,6 +37,7 @@ export default function RootLayout({
         <MotionProvider>
           <Navbar />
           {children}
+          <CookieConsent />
         </MotionProvider>
       </body>
     </html>
