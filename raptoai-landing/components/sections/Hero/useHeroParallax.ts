@@ -38,8 +38,8 @@ export function useHeroParallax() {
       yTo(0);
     };
 
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseleave", handleMouseLeave);
+    container.addEventListener("mousemove", handleMouseMove, { passive: true });
+    container.addEventListener("mouseleave", handleMouseLeave, { passive: true });
 
     return () => {
       container.removeEventListener("mousemove", handleMouseMove);

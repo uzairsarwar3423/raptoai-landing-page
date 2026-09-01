@@ -7,7 +7,7 @@ import { staggerContainer, revealUp } from "@/lib/motion/variants";
 
 export function CostStats() {
   return (
-    <section className="relative bg-[var(--color-paper)] py-32 z-10 cost-stats-bg-pattern overflow-hidden border-t border-[var(--color-ink-900)]/5">
+    <section className="relative bg-[var(--color-paper)] py-32 z-10 cost-stats-bg-pattern overflow-hidden border-t border-[var(--color-ink-900)]/5 content-auto">
       {/* Background glow to anchor the bento */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[var(--color-brand-100)]/20 blur-[120px] rounded-[100%] pointer-events-none" />
 

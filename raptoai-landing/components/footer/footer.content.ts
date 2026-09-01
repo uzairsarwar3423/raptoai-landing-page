@@ -2,7 +2,7 @@ export const footerColumns = [
   {
     header: "Product",
     links: [
-      { label: "Features", href: "/#mechanism" },
+      { label: "Features", href: "/#why-rapto" },
       { label: "Pricing", href: "/pricing" },
       { label: "Security", href: "/security" },
       { label: "Integrations", href: "/#integrations" },

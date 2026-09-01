@@ -1,7 +1,6 @@
 import { Hero } from "@/components/sections/Hero/Hero";
 import { TrustedBrandStrip } from "@/components/sections/TrustedBrandStrip/TrustedBrandStrip";
-import { CostStats } from "@/components/sections/CostStats/CostStats";
-import { Mechanism } from "@/components/sections/Mechanism/Mechanism";
+import { WhyUsBento } from "@/components/sections/WhyUsBento/WhyUsBento";
 import { WorkflowFeature } from "@/components/sections/WorkflowFeature/WorkflowFeature";
 import { Integrations } from "@/components/sections/Integrations/Integrations";
 import { Pricing } from "@/components/sections/Pricing/Pricing";
@@ -13,8 +12,7 @@ export default function Home() {
     <main>
       <Hero />
       <TrustedBrandStrip />
-      <CostStats />
-      <Mechanism />
+      <WhyUsBento />
       <WorkflowFeature />
       <Integrations />
       <Pricing />

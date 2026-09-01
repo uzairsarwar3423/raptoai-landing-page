@@ -16,7 +16,7 @@ export function Footer({ finalCtaSelector = "#final-cta" }: FooterProps) {
   return (
     <footer 
       ref={scope} 
-      className="relative z-0 overflow-hidden bg-[var(--color-canvas-dark)] pt-32 pb-8 px-6 md:px-12 lg:px-24 w-full"
+      className="relative z-0 overflow-hidden bg-[var(--color-canvas-dark)] pt-32 pb-8 px-6 md:px-12 lg:px-24 w-full content-auto"
     >
       {/* 10/10 Detail: Top radial border glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />

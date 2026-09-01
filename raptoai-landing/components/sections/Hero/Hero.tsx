@@ -65,9 +65,9 @@ export function Hero() {
             <div className="flex items-center gap-3">
               <span className="text-xs text-[var(--color-ink-on-dark-muted)] font-medium">Works with</span>
               <div className="flex items-center gap-2.5 bg-white/5 px-2.5 py-1.5 rounded-full border border-white/5">
-                <Image src="/icons/zoom.svg" alt="Zoom" width={16} height={16} className="opacity-75 hover:opacity-100 transition-opacity hover:scale-110" />
-                <Image src="/icons/google-meet.svg" alt="Google Meet" width={16} height={16} className="opacity-75 hover:opacity-100 transition-opacity hover:scale-110" />
-                <Image src="/icons/teams.svg" alt="Microsoft Teams" width={16} height={16} className="opacity-75 hover:opacity-100 transition-opacity hover:scale-110" />
+                <Image src="/icons/zoom.svg" alt="Zoom" width={16} height={16} priority className="opacity-75 hover:opacity-100 transition-opacity hover:scale-110" />
+                <Image src="/icons/google-meet.svg" alt="Google Meet" width={16} height={16} priority className="opacity-75 hover:opacity-100 transition-opacity hover:scale-110" />
+                <Image src="/icons/teams.svg" alt="Microsoft Teams" width={16} height={16} priority className="opacity-75 hover:opacity-100 transition-opacity hover:scale-110" />
               </div>
             </div>
           </div>

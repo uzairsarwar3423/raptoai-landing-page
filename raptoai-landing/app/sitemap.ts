@@ -2,5 +2,21 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
-  return [{ url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 }];
+  const now = new Date();
+
+  return [
+    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/pricing`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/security`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/compare`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/compare/vs-fireflies`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/compare/vs-otter`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/compare/vs-fathom`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/compare/vs-granola`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/legal/dpa`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/dpa`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+  ];
 }

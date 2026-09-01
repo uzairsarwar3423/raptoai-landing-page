@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger } from "@/lib/motion/gsap-setup";
+import { gsap } from "@/lib/motion/gsap-setup";
 
 interface CountOptions {
   from?: number;
@@ -40,7 +40,7 @@ export function useScrollCountOnce({
 
     const proxy = { value: from };
 
-    gsap.to(proxy, {
+    const tween = gsap.to(proxy, {
       value: to,
       duration,
       ease: "power2.out",
@@ -55,7 +55,10 @@ export function useScrollCountOnce({
       },
     });
 
-    return () => ScrollTrigger.getAll().forEach((st) => st.kill());
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
   }, [to, duration, from]);
 
   return { elRef, triggerRef };

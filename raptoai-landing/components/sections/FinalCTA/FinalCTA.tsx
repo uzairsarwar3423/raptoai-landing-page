@@ -12,7 +12,7 @@ export function FinalCTA() {
   return (
     <section
       id="final-cta"
-      className="relative z-20 bg-[var(--color-canvas-dark)] text-[var(--color-ink-on-dark)] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-white/10"
+      className="relative z-20 bg-[var(--color-canvas-dark)] text-[var(--color-ink-on-dark)] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-white/10 content-auto"
     >
       {/* Aceternity Dither Shader Background Layer */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-screen">

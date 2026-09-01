@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useSpring, useTransform, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export interface AnimatedNumberProps {
   value: number;
@@ -12,15 +12,13 @@ export interface AnimatedNumberProps {
 
 export function AnimatedNumber({
   value,
-  duration = 2,
+  duration = 1.2,
   format = (val) => Math.round(val).toString(),
   className,
 }: AnimatedNumberProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [hasTriggered, setHasTriggered] = useState(false);
 
-  // We use a spring that animates from 0 to the target value
   const springValue = useSpring(0, {
     duration: duration * 1000,
     bounce: 0,
@@ -29,11 +27,10 @@ export function AnimatedNumber({
   const display = useTransform(springValue, (current) => format(current));
 
   useEffect(() => {
-    if (isInView && !hasTriggered) {
+    if (isInView) {
       springValue.set(value);
-      setHasTriggered(true);
     }
-  }, [isInView, value, springValue, hasTriggered]);
+  }, [isInView, value, springValue]);
 
   return (
     <motion.span ref={ref} className={className}>
@@ -41,3 +38,4 @@ export function AnimatedNumber({
     </motion.span>
   );
 }
+

@@ -153,7 +153,7 @@ export function WorkflowFeature() {
     <section
       id="workflow-feature"
       aria-label="How Rapto automates accountability workflows"
-      className="relative bg-[var(--color-paper)] border-t border-[var(--color-ink-900)]/5 py-28 md:py-36 overflow-hidden"
+      className="relative bg-[var(--color-paper)] border-t border-[var(--color-ink-900)]/5 py-28 md:py-36 overflow-hidden content-auto"
     >
       {/* Ambient background radial glow */}
       <div

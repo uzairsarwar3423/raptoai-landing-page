@@ -350,6 +350,22 @@ export function Mechanism() {
                   </motion.div>
                 </AnimatePresence>
 
+                {/* Hidden prefetch for seamless instant step transitions */}
+                <div className="sr-only" aria-hidden="true">
+                  {mechanismSteps.map((step, idx) => (
+                    idx !== activeStep ? (
+                      <Image
+                        key={step.id}
+                        src={step.imageSrc}
+                        alt=""
+                        width={10}
+                        height={10}
+                        loading="lazy"
+                      />
+                    ) : null
+                  ))}
+                </div>
+
                 {/* Step dot indicator pills */}
                 <div
                   className="absolute bottom-3 sm:bottom-4 left-1/2 z-20 flex items-center gap-2"

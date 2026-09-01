@@ -52,7 +52,7 @@ const integrations = [
 
 export default function Integrations3() {
   return (
-    <section className="bg-background py-20">
+    <section className="bg-background py-20 content-auto">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 flex flex-col items-center text-center">
           <h2 className="text-foreground text-4xl font-semibold tracking-tight md:text-5xl">

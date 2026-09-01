@@ -73,7 +73,9 @@ export function HeroArtifact() {
       .to(emberRef.current, { opacity: 0, duration: 0.15, ease: "none" }, 0.85);
 
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      introTl.kill();
+      scrubTl.scrollTrigger?.kill();
+      scrubTl.kill();
     };
   }, { scope: containerRef });
 
