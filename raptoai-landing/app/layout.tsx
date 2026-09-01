@@ -51,13 +51,22 @@ export const metadata: Metadata = {
     icon: [
       { url: "/rapto-ai.svg", type: "image/svg+xml", sizes: "any" },
       { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-48.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon-96.png", type: "image/png", sizes: "96x96" },
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
-      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico", sizes: "48x48 32x32 16x16" },
     ],
-    shortcut: "/rapto-ai.svg",
+    shortcut: "/favicon.ico",
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
       { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-touch-icon.png",
+      },
     ],
   },
   manifest: "/manifest.webmanifest",
