@@ -31,7 +31,8 @@ export const navLinks = [
   { label: "Product", type: "dropdown", items: productDropdownItems },
   { label: "Pricing", href: "/pricing" },
   { label: "Security", href: "/security" },
-  { label: "Customers", href: "/customers" },
+  { label: "Blog", href: "/blog" },
+  { label: "Compare", href: "/compare" },
 ] as const;
 
 export const navCTA = {
