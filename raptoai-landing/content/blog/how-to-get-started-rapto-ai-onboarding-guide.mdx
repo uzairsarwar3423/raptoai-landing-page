@@ -1,0 +1,587 @@
+---
+id: "how-to-get-started-rapto-ai-onboarding-guide"
+slug: "how-to-get-started-rapto-ai-onboarding-guide"
+title: "How to Get Started and Onboard with Rapto AI: The Complete Step-by-Step Setup Guide"
+seoTitle: "How to Get Started with Rapto AI: Step-by-Step Onboarding & Setup Guide (2026)"
+excerpt: "Master Rapto AI onboarding in under 4 minutes. A complete walkthrough from account creation and team workspace setup to Google Calendar sync, Linear/Jira integrations, and your first automated meeting session."
+metaDescription: "Master Rapto AI onboarding in under 4 minutes. Learn how to create your team workspace, connect Google Calendar, sync Linear & Jira, and track meeting commitments."
+primaryKeyword: "how to get started with Rapto AI"
+secondaryKeywords:
+  - "Rapto AI onboarding"
+  - "how to use Rapto AI"
+  - "Rapto AI setup"
+  - "Rapto AI integrations"
+  - "Rapto AI tutorial"
+semanticKeywords:
+  - "cross-meeting memory"
+  - "Linear issue sync"
+  - "Jira ticket integration"
+  - "AI commitment tracking"
+  - "botless meeting assistant"
+  - "Google Calendar sync"
+  - "team accountability dashboard"
+category: "engineering-execution"
+author: "alex-vance"
+publishedAt: "2026-09-03T08:00:00Z"
+updatedAt: "2026-09-03T08:00:00Z"
+status: "published"
+readingTime: "11 min read"
+wordCount: 3450
+topicCluster: "cluster"
+featured: true
+coverImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+coverImageAlt: "Modern software engineering squad onboarding to Rapto AI commitment tracking dashboard"
+coverImageGradient: "from-blue-950/40 via-slate-950/20 to-transparent"
+directAnswer:
+  headline: "How do you get started and onboard with Rapto AI?"
+  summary: "To get started with Rapto AI, navigate to app.rapto.cloud/register to create your account using email or Google Single Sign-On (SSO). Complete the 4-step onboarding flow: verify your credentials, configure your dedicated workspace name and team URL slug, invite coworkers with granular roles (Member, Manager, Admin), and authorize Google or Outlook Calendar sync. Once initialized, connect your Linear, Jira, Slack, or Notion workspace in Settings to turn spoken meeting promises into synchronized tickets automatically."
+  keyPoints:
+    - "Streamlined 4-Minute Setup: Register with Google SSO or verified email, configure a custom workspace slug, and assign team roles."
+    - "Zero-Touch Calendar Sync: Connect Google or Outlook Calendar to automatically detect Zoom, Google Meet, and Microsoft Teams links."
+    - "Bi-Directional Issue Sync: Integrate Linear and Jira to turn extracted commitments into tracked tickets with assignees and due dates."
+    - "Cross-Meeting Memory: Historical promises from standups and sprint retros are automatically cross-referenced and resolved in subsequent calls."
+tableOfContents:
+  - id: "introduction"
+    text: "Introduction: Why Traditional Meeting Tools Fail"
+    level: 2
+  - id: "what-is-rapto-ai"
+    text: "What Is Rapto AI?"
+    level: 2
+  - id: "before-you-start"
+    text: "Before You Start: Prerequisites & Readiness Checklist"
+    level: 2
+  - id: "step-by-step-onboarding-overview"
+    text: "Step-by-Step Rapto AI Onboarding Flow"
+    level: 2
+  - id: "account-creation-and-authentication"
+    text: "1. Account Creation & Authentication"
+    level: 2
+  - id: "onboarding-configuration"
+    text: "2. Workspace Setup & Team Configuration"
+    level: 2
+  - id: "connecting-calendar-and-integrations"
+    text: "3. Connecting Calendars & Required Integrations"
+    level: 2
+  - id: "understanding-the-dashboard"
+    text: "4. Understanding the Rapto AI Dashboard"
+    level: 2
+  - id: "your-first-meeting-workflow"
+    text: "5. Your First Session: The End-to-End Meeting Workflow"
+    level: 2
+  - id: "common-onboarding-issues"
+    text: "Common Onboarding Issues & Troubleshooting"
+    level: 2
+  - id: "best-practices"
+    text: "Best Practices for Team-Wide Adoption"
+    level: 2
+  - id: "frequently-asked-questions"
+    text: "Frequently Asked Questions (FAQ)"
+    level: 2
+  - id: "conclusion"
+    text: "Conclusion & Next Steps"
+    level: 2
+relatedSlugs:
+  - "engineering-standups-commitment-tracking"
+  - "ai-meeting-accountability-guide"
+  - "cross-meeting-memory-architecture"
+  - "why-70-percent-meeting-action-items-fail"
+faq:
+  - question: "How long does it take to onboard my team to Rapto AI?"
+    answer: "Initial setup takes less than 4 minutes. You create your account, configure your workspace URL, invite teammates, and authorize Google Calendar. Connecting developer issue trackers like Linear or Jira takes an additional 60 seconds via standard OAuth."
+  - question: "Does Rapto AI send an intrusive bot to our video calls?"
+    answer: "Rapto AI coordinates audio ingestion through high-reliability conference workers scheduled precisely 2 minutes prior to your meeting start time. In calendar-synced calls, the worker joins silently with zero interruption to your conversation."
+  - question: "How does Rapto AI convert spoken promises into Linear and Jira tickets?"
+    answer: "During meetings, Rapto's Python AI extraction microservice identifies explicit commitments, actors, and deadlines. Once extracted, the platform triggers webhook dispatches to Linear or Jira via your configured team mappings, creating tickets with full contextual summaries."
+  - question: "What happens if a teammate mentions they completed a task in a later standup?"
+    answer: "Rapto AI's Cross-Meeting Memory Engine runs vector similarity matching against all open historical commitments. When a participant states an update like 'I pushed the auth fix yesterday', Rapto identifies the matching open commitment and transitions its state to RESOLVED."
+  - question: "Is my meeting audio and transcript data used to train public AI models?"
+    answer: "No. Rapto AI enforces zero-data-retention AI processing policies. Transcripts and extracted structured metadata are isolated per tenant in encrypted PostgreSQL and MongoDB storage under strict SOC-2 Type II controls and are never submitted to public LLM training corpuses."
+---
+
+## Introduction: Why Traditional Meeting Tools Fail
+
+Every week, high-growth engineering and product squads spend dozens of hours in standups, sprint planning sessions, architecture reviews, and backlog groomings. During these discussions, critical decisions are agreed upon and verbal commitments are made:
+
+> *"I will push the database migration script by Thursday afternoon."*  
+> *"I'll investigate the Redis connection timeout bug and update the Linear ticket."*  
+> *"Let's prepare the API docs before Monday's customer demo."*
+
+Yet, industry data reveals that **over 70% of spoken meeting action items are never executed or tracked**. 
+
+The root cause isn't developer negligence—it is the **Accountability Gap**. Traditional meeting transcription tools (such as Otter, Fireflies, or Zoom AI Companion) act as passive recording vaults. They generate bloated, 5-page generic summaries that get dumped into Slack channels or email threads where nobody reads them. They treat every meeting as an ephemeral, isolated event, completely blind to what was promised in yesterday's standup.
+
+**Rapto AI** was engineered specifically to solve this breakdown. Instead of generating passive transcripts, Rapto functions as an **autonomous meeting accountability engine**. It captures audio, extracts structured commitments (Actor, Action, Deadline, Confidence Score), syncs them bi-directionally to developer tools like Linear and Jira, and maintains a **Cross-Meeting Memory Graph** to verify whether yesterday's promises were actually shipped today.
+
+This guide provides a comprehensive, step-by-step walkthrough on **how to get started and onboard with Rapto AI**—taking your squad from initial registration to an active, automated accountability workflow in under 4 minutes.
+
+---
+
+## What Is Rapto AI?
+
+**Rapto AI** is an AI-powered meeting intelligence and commitment tracking platform purpose-built for engineering, product, and cross-functional teams.
+
+```
++-------------------------------------------------------------------------------+
+|                             RAPTO AI PLATFORM                                 |
++-------------------------------------------------------------------------------+
+|  1. INGESTION        Calendar Sync (Google/Outlook) -> Multi-Platform Bot    |
+|  2. EXTRACTION       Whisper Diarization -> LLM State Machine -> Action Items |
+|  3. PERSISTENCE      PostgreSQL 16 (ACID State) + MongoDB (Transcripts)       |
+|  4. RESOLUTION       Cross-Meeting Memory Engine (Vector Similarity Matching) |
+|  5. SYNCHRONIZATION  Bi-Directional Sync -> Linear, Jira, Slack, Notion       |
++-------------------------------------------------------------------------------+
+```
+
+### Key Differences: Passive Transcribers vs. Rapto AI
+
+| Feature / Capability | Generic AI Transcribers | Rapto AI Accountability Engine |
+| :--- | :--- | :--- |
+| **Primary Output** | 5-page text summary / raw transcript | Structured, assigned commitment state machine |
+| **Temporal Context** | Single isolated call (zero historical memory) | **Cross-Meeting Memory Graph** across weeks of calls |
+| **Issue Tracker Sync** | One-way copy-paste or zapier text dump | **Native Bi-directional sync** with Linear & Jira |
+| **Commitment Resolution** | Manual user checkoff | **Autonomous verbal resolution detection** in later calls |
+| **Team Health Metrics** | Word count & speaker talk-time percentages | **Objective Team Pulse & Follow-Through Scoring** |
+| **Call Ingestion** | Intrusive third-party bot clutter | Clean, calendar-synchronized automated worker |
+
+> [!NOTE]
+> Rapto AI does not replace your issue tracker or calendar; it acts as the intelligent bridge between what your team **speaks** on video calls and what gets **tracked and closed** in your project management software.
+
+---
+
+## Before You Start: Prerequisites & Readiness Checklist
+
+Before initiating the onboarding workflow, ensure your environment meets the following basic requirements:
+
+* **Video Conferencing Tools**: Google Meet, Zoom, or Microsoft Teams.
+* **Primary Calendar**: A Google Workspace (Gmail) or Microsoft 365 Outlook account with permission to authorize third-party calendar read access.
+* **Supported Web Browsers**: Google Chrome, Mozilla Firefox, Apple Safari, or Microsoft Edge (latest 2 versions recommended).
+* **Workspace Permissions**: If you plan to connect Linear, Jira, Slack, or Notion during or after onboarding, ensure you have admin or integration authorization rights in those platforms.
+
+```
++------------------------------------------------------------------------+
+|                      ONBOARDING READINESS CHECKLIST                    |
++------------------------------------------------------------------------+
+| [x] Active Google or Work Email Address                                |
+| [x] Access to Google Calendar or Microsoft Outlook                     |
+| [x] Name and preferred URL slug for your Team Workspace               |
+| [x] (Optional) Linear / Jira project keys for immediate ticket sync    |
+| [x] (Optional) Slack channel names for automated meeting broadcasts    |
++------------------------------------------------------------------------+
+```
+
+---
+
+## Step-by-Step Rapto AI Onboarding Flow
+
+Rapto AI features a linear, guarded 4-step onboarding sequence designed for frictionless workspace creation:
+
+```
++----------------+      +---------------------+      +--------------------+      +-------------------------+      +-------------------+
+|  1. Register   | ---> |  2. Create Team     | ---> |  3. Invite Members | ---> |  4. Connect Calendar    | ---> |  5. Dashboard     |
+|  Email/Google  |      |  Slug & Org Name    |      |  Roles & Permissions|      |  Google / Outlook Sync  |      |  Workspace Ready  |
++----------------+      +---------------------+      +--------------------+      +-------------------------+      +-------------------+
+```
+
+Let us walk through each step of the setup process in detail.
+
+---
+
+## 1. Account Creation & Authentication
+
+To create your Rapto AI account, open your browser and navigate to the registration portal at `app.rapto.cloud/register`.
+
+```
+===================================================================
+                     RAPTO AI AUTHENTICATION
+===================================================================
+ [ Create your account                                           ]
+   Sign up in seconds to get started with AI meeting tracking.
+
+   Full Name:      [ Alex Costa                          ]
+   Email Address:  [ alex.costa@company.com              ]
+   Password:       [ ****************                    ]
+   Strength:       [====================] Strong (8+ chars, upper, num)
+
+   [  Create Account ->  ]
+   -------------------------- OR ----------------------------------
+   [  G  Continue with Google                                   ]
+===================================================================
+```
+
+### Option A: Single-Click Google SSO (Recommended)
+Click **Continue with Google** to authenticate through Google OAuth 2.0. This automatically verifies your email address and bypasses the manual email verification step.
+
+### Option B: Email & Password Registration
+If signing up with your corporate email:
+1. Enter your **Full Name** (e.g., `Alex Costa`).
+2. Provide your **Work Email** (e.g., `alex.costa@company.com`).
+3. Enter a secure **Password**. Rapto AI enforces real-time client and server validation requiring:
+   * Minimum **8 characters**
+   * At least **one uppercase letter** (`A-Z`)
+   * At least **one number** (`0-9`)
+   * Live entropy calculation via the visual `PasswordStrengthBar`.
+4. Click **Create Account**.
+
+### Email Verification
+If registering via email and password, Rapto AI immediately sends a cryptographic verification link to your inbox. You will see the **Check your email** confirmation screen. Click the verification link in your email to activate your account and proceed to the onboarding wizard.
+
+> [!TIP]
+> If you arrived via a team invite link (e.g., `app.rapto.cloud/register?redirect=/invite/xyz123`), the invite token is automatically bound to your session. Once verified, your workspace membership is granted immediately without needing manual administrator approval.
+
+---
+
+## 2. Workspace Setup & Team Configuration
+
+Once authenticated, Rapto AI directs you to the onboarding wizard at `/onboarding`.
+
+### Step 2.1: Welcome & Prerequisite Guard
+The welcome screen confirms that your credentials have been verified and initiates your workspace provisioning. Click **Set Up Team Workspace** (or **Continue Setup** if returning to an existing session).
+
+```
++---------------------------------------------------------------+
+|  RAPTO ONBOARDING (Step 1 of 4)                               |
++---------------------------------------------------------------+
+|  Welcome, Alex!                                               |
+|  Let's get your workspace set up in just a few quick steps    |
+|  so you can start tracking meeting commitments automatically. |
+|                                                               |
+|  [*] Account Verified                                         |
+|      You've successfully signed up. Let's create your team.   |
+|                                                               |
+|  [ Set Up Team Workspace -> ]                                 |
++---------------------------------------------------------------+
+```
+
+### Step 2.2: Create Team Workspace (`/onboarding/create-team`)
+Every organization in Rapto AI operates within a dedicated tenant workspace. In this step, you configure your organization identity and access URL:
+
+```
++---------------------------------------------------------------+
+|  RAPTO ONBOARDING (Step 2 of 4)                               |
++---------------------------------------------------------------+
+|  Create team workspace                                        |
+|  Your workspace URL is where your team will log in.           |
+|                                                               |
+|  TEAM NAME                                                    |
+|  [ Acme Engineering                                         ] |
+|                                                               |
+|  WORKSPACE URL SLUG                                           |
+|  app.rapto.cloud/teams/[ acme-eng                           ] |
+|  * URL is available                                           |
+|                                                               |
+|  [ Back ]                                   [ Continue -> ]   |
++---------------------------------------------------------------+
+```
+
+1. **Team Name**: Enter your company or squad name (e.g., `Acme Engineering`).
+2. **Workspace URL Slug**: Rapto AI automatically generates a URL-friendly slug. As you type, the platform executes a debounced, real-time availability query against the backend:
+   * `Checking URL availability…`: Validates slug uniqueness against PostgreSQL database records.
+   * `URL is available`: Confirms your chosen slug is ready for registration.
+   * `URL is taken. Try [suggestion]`: If another organization has registered the slug, Rapto provides a one-click available alternative (e.g., `acme-eng-1`).
+   * `URL must be alphanumeric with hyphens only`: Enforces standard URL syntax.
+3. Click **Continue →**.
+
+### Step 2.3: Invite Teammates (`/onboarding/invite-team`)
+Accountability works best when the entire squad participates. The interactive invite screen allows you to batch-invite colleagues with tailored permissions:
+
+```
++---------------------------------------------------------------+
+|  RAPTO ONBOARDING (Step 3 of 4)                               |
++---------------------------------------------------------------+
+|  Invite your teammates                                        |
+|  Add coworkers to your team to track commitments together.    |
+|                                                               |
+|  TEAMMATE EMAILS                                              |
+|  +----------------------------------------------------------+ |
+|  | [sarah@acme.com x] [marcus@acme.com x] [dev@acme.com  ] | |
+|  +----------------------------------------------------------+ |
+|  Press Enter, Space, or Comma to add an email tag chip.       |
+|                                                               |
+|  ASSIGN ROLE                                                  |
+|  Role applies to all invited members       [ Member  v ]      |
+|                                                               |
+|  [ Skip for now ]                           [ Send Invites ]  |
++---------------------------------------------------------------+
+```
+
+1. **Email Chip Input**: Type coworker email addresses into the field. Press `Enter`, `Space`, or `,` to transform each address into a removable chip.
+2. **Role Assignment Popover**: Choose the permission tier for the invited cohort:
+   * **Member**: Can view meetings, monitor assigned action items, and add comments.
+   * **Manager**: Can view team-wide pulse metrics, edit integrations, and invite additional members.
+   * **Admin**: Full workspace authority, including billing management, data deletion, and enterprise security policies.
+3. **Send Invites**: Click **Send Invites**. Rapto AI dispatches branded email invites with secure join tokens. A status table confirms successful dispatches (`Invited as member`, `Already invited`, or `Already member`).
+
+> [!NOTE]
+> Inviting teammates during onboarding is completely optional. If you prefer to test Rapto AI individually before rolling it out to your team, click **Skip for now**.
+
+---
+
+## 3. Connecting Calendars & Required Integrations
+
+The final onboarding step connects your calendar so Rapto AI can discover upcoming meetings and dispatch automated transcription and commitment extraction workers.
+
+### Step 3.1: Connect Google Calendar (`/onboarding/connect-calendar`)
+Rapto AI uses secure OAuth 2.0 to sync scheduled conference calls:
+
+```
++---------------------------------------------------------------+
+|  RAPTO ONBOARDING (Step 4 of 4)                               |
++---------------------------------------------------------------+
+|  Sync your calendar                                           |
+|  Connect Google Calendar to automatically invite Rapto to     |
+|  meetings and sync action items with deadlines.               |
+|                                                               |
+|  +----------------------------------------------------------+ |
+|  |   [ G  Connect Google Calendar ]                         | |
+|  +----------------------------------------------------------+ |
+|                                                               |
+|  [ Back ]                              [ Finish & Skip Sync ] |
++---------------------------------------------------------------+
+```
+
+1. Click **Connect Google Calendar**.
+2. A Google OAuth modal will prompt you to grant read-only calendar access.
+3. **Scope Transparency**: Rapto AI requests read permissions to scan event start times, titles, and video conference URLs (Google Meet, Zoom, MS Teams). Rapto **never** modifies or deletes your calendar entries.
+4. Once authorized, the button updates with a green checkmark indicating `Google Calendar Connected`.
+5. Click **Finish Setup →**.
+
+### Step 3.2: Workspace Provisioning (`/onboarding/complete`)
+Rapto AI finalizes your tenant schema, sets `user.onboardingCompleted = true`, and transitions you directly into your new dashboard.
+
+```
++---------------------------------------------------------------+
+|                       WORKSPACE READY                         |
+|                                                               |
+|                             [ V ]                             |
+|                                                               |
+|                      Workspace is ready                       |
+|                   Preparing your workspace…                   |
++---------------------------------------------------------------+
+```
+
+---
+
+## Connecting Developer Issue Trackers & Slack
+
+After landing in the dashboard, take 60 seconds to link your developer tools under **Settings → Integrations** (`/settings/integrations`). This enables automated bi-directional commitment synchronization.
+
+```
+===================================================================
+                   RAPTO INTEGRATIONS CATALOG
+===================================================================
+ [ Linear ]       Sync action items directly into Linear teams.
+                  Status: [ Connect Linear -> ]
+
+ [ Jira ]         Create & sync Jira Cloud tickets from standups.
+                  Status: [ Connect Jira -> ]
+
+ [ Slack ]        Broadcast meeting recaps & action items to channels.
+                  Status: [ Add to Slack -> ]
+
+ [ Notion ]       Sync structured meeting minutes into databases.
+                  Status: [ Connect Notion -> ]
+===================================================================
+```
+
+### 1. Linear Integration
+* **Why Connect**: Automatically convert spoken meeting tasks into Linear issues assigned to the correct developer with due dates.
+* **Setup**:
+  1. Click **Connect Linear** in the integrations grid.
+  2. Authorize the Rapto AI OAuth application.
+  3. Select your target **Linear Team** (e.g., `Engineering`, `Frontend`).
+  4. Choose default issue state mapping (e.g., `Todo`, `Backlog`).
+
+### 2. Atlassian Jira Cloud Integration
+* **Why Connect**: Maintain enterprise compliance by syncing meeting promises directly into active Jira sprints.
+* **Setup**:
+  1. Click **Connect Jira** and select your Jira Cloud instance.
+  2. Select your default **Project Key** (e.g., `PROD`, `CORE`).
+  3. Map issue types (e.g., `Task`, `Story`, `Bug`).
+  4. Configure assignee resolution rules.
+
+### 3. Slack Workspace Integration
+* **Why Connect**: Keep non-meeting attendees informed without cluttering inboxes.
+* **Setup**:
+  1. Click **Add to Slack** and select your authorized Slack workspace.
+  2. Pick your destination channel (e.g., `#eng-standup`, `#product-announcements`).
+  3. Choose notification granularity: *Executive Summary only*, *Full Action Item List*, or *Blocker Alerts*.
+
+---
+
+## 4. Understanding the Rapto AI Dashboard
+
+When you navigate to `/dashboard`, you are greeted with the core overview interface. The dashboard is structured into four real-time operational widgets:
+
+```
++---------------------------------------------------------------------------------------------------+
+|  OVERVIEW                     Track commitments, meetings, and team performance.  [+ Add meeting] |
++-----------------------------------------------------------------+---------------------------------+
+|  MY COMMITMENTS (Widget 1)                                      |  UPCOMING MEETINGS (Widget 2)   |
+|  -------------------------------------------------------------  |  -----------------------------  |
+|  [x] Deploy Redis connection pooling script      Due: Today     |  Sprint 42 Standup              |
+|      Source: Daily Standup #84 | Linear: ENG-104                |  10:00 AM - 10:15 AM (Meet)     |
+|                                                                 |  Status: Bot Joining in 8m      |
+|  [ ] Profile LLM token latency on FastAPI        Due: Tomorrow  |                                 |
+|      Source: Architecture Review | Jira: PROD-412               |  Architecture Review            |
+|                                                                 |  02:00 PM - 03:00 PM (Zoom)     |
++-----------------------------------------------------------------+---------------------------------+
+|  TEAM PULSE (Widget 3)                                          |  RECENT ACTIVITY (Widget 4)     |
+|  -------------------------------------------------------------  |  -----------------------------  |
+|  Commitment Completion Rate:  88.4% (+4.2%)                     |  * Daily Standup #84 processed  |
+|  Open Action Items:           14 Active                         |  * Linear issue ENG-104 synced  |
+|  Cross-Meeting Resolved:      9 Resolved                        |  * Sarah resolved DB task       |
++-----------------------------------------------------------------+---------------------------------+
+```
+
+### 1. My Commitments Widget
+Displays all commitments explicitly extracted from meetings where you were identified as the owner. Each item displays:
+* Task description
+* Originating meeting title and timestamp
+* Synced issue tracker badge (e.g., Linear `ENG-104` or Jira `PROD-412`)
+* Due date and status toggle checkbox.
+
+### 2. Upcoming Meetings Widget
+Lists your synchronized Google or Outlook calendar events. For every event containing a valid Google Meet, Zoom, or Microsoft Teams link, Rapto displays a **Bot Joining** indicator confirming the recording worker is scheduled.
+
+### 3. Team Pulse Widget
+An executive health metric summarizing organizational execution velocity:
+* **Completion Rate**: Percentage of commitments closed before their deadline.
+* **Open Commitments**: Active items requiring follow-through.
+* **Resolution Rate**: Commitments automatically verified and closed in subsequent meetings.
+
+### 4. Recent Activity Feed
+An audit stream logging meeting ingestion events, newly created Linear/Jira issues, and cross-meeting resolution triggers in real time.
+
+---
+
+## 5. Your First Session: The End-to-End Meeting Workflow
+
+Now that your workspace and integrations are active, let us walk through an actual meeting lifecycle.
+
+```
+===========================================================================================
+                               END-TO-END MEETING WORKFLOW
+===========================================================================================
+
+ [ Step 1: Schedule or Add ]   Calendar event automatically schedules Rapto worker, 
+                               or click "+ Add meeting" to paste an ad-hoc conference URL.
+
+ [ Step 2: Speak Commitments ] Team conducts standup. Spoken commitments are made:
+                               "I'll patch the auth token leak by 3 PM."
+
+ [ Step 3: AI Processing ]     Audio pipeline diarizes speakers, cleans filler words, 
+                               and extracts structured commitments with confidence scores.
+
+ [ Step 4: Issue Sync ]        Commitments push to Linear/Jira and broadcast to Slack.
+
+ [ Step 5: Next Meeting ]      Teammate says: "I pushed the auth patch yesterday."
+                               Cross-Meeting Memory Engine resolves the previous commitment!
+===========================================================================================
+```
+
+### Step 1: Ingesting the Meeting
+* **Automated Mode**: Because Google Calendar is connected, Rapto automatically dispatches an ingestion worker 2 minutes prior to the start of your scheduled standup.
+* **Ad-Hoc / Manual Mode**: If you have an unscheduled call, click the **+ Add meeting** button in the dashboard header, paste your Zoom/Meet URL, and click **Dispatch Bot**. The worker joins within 15 seconds.
+
+### Step 2: Conducting the Discussion
+Conduct your meeting naturally. You do not need to alter your speaking style or use special voice commands. Rapto's acoustic diarization models identify individual speakers based on vocal timbre and conference metadata.
+
+### Step 3: Automated Processing (< 45 Seconds)
+Within 45 seconds of the call ending, Rapto AI executes its multi-stage pipeline:
+1. **Diarization & Transcription**: Generates a timestamped, speaker-attributed transcript.
+2. **Divergent Filler Cleanup**: Removes speech artifacts (`um`, `like`, `you know`, repeated words).
+3. **Structured NLP Extraction**: Identifies explicit actionable promises, extracting:
+   * **Assignee**: The individual responsible for delivery.
+   * **Commitment Action**: The specific technical deliverable.
+   * **Deadline**: Extracted relative or absolute date.
+   * **Confidence Score**: Algorithmic certainty threshold (0.0 to 1.0).
+
+```json
+{
+  "actor": "Sarah Chen",
+  "action": "Deploy Redis connection pooling script and verify cache hit rates",
+  "deadline": "2026-09-04T17:00:00Z",
+  "confidenceScore": 0.94,
+  "status": "OPEN",
+  "syncedIssue": {
+    "provider": "LINEAR",
+    "issueKey": "ENG-104",
+    "url": "https://linear.app/acme/issue/ENG-104"
+  }
+}
+```
+
+### Step 4: Cross-Meeting Resolution in Action
+During your next standup, when Sarah Chen speaks:
+> *"The Redis connection pooling script was deployed yesterday and cache hit rates jumped to 96%."*
+
+Rapto AI's Cross-Meeting Memory Engine matches the semantic vector of Sarah's sentence against her open commitment from the previous meeting, evaluates the confidence score (0.92 > 0.65 threshold), and automatically updates the state of `ENG-104` to **RESOLVED**!
+
+---
+
+## Common Onboarding Issues & Troubleshooting
+
+If you encounter an unexpected state during onboarding, consult the resolution matrix below:
+
+### 1. Calendar Events Not Appearing in Dashboard
+* **Symptom**: You connected Google Calendar, but the Upcoming Meetings widget is empty.
+* **Cause**: Calendar sync occurs periodically on a 5-minute polling interval, or the event lacks a recognized video conference URL.
+* **Fix**: Ensure your calendar event contains a valid Google Meet, Zoom, or Microsoft Teams link in the location or conference field. You can also trigger an immediate manual refresh by reloading the dashboard.
+
+### 2. Video Conference Bot Not Admitted to Call
+* **Symptom**: The Rapto worker waits in the video conference waiting room.
+* **Cause**: Your Zoom or Teams security policy requires the meeting host to manually admit external guests from the lobby.
+* **Fix**: The call host must click **Admit** when the Rapto worker requests entry. To streamline this, enterprise workspace admins can whitelist the Rapto bot identity in Zoom / Teams account settings.
+
+### 3. Teammates Did Not Receive Invite Emails
+* **Symptom**: Coworkers have not received their invitation links.
+* **Cause**: Enterprise email filters or spam firewalls intercepted the automated transactional email.
+* **Fix**: Have teammates check their spam or quarantine folder. Alternatively, workspace Admins can navigate to **Settings → Members**, click **Copy Invite Link**, and share the URL directly via Slack or direct message.
+
+### 4. Linear / Jira Issues Failing to Sync
+* **Symptom**: Action items appear in Rapto, but no corresponding tickets appear in Linear or Jira.
+* **Cause**: Missing write permissions or required custom fields in your Jira project schema.
+* **Fix**: Visit **Settings → Integrations**, click **Test Connection** on your Jira/Linear card, and ensure your integration user has permission to create issues within the selected project key.
+
+---
+
+## Best Practices for Team-Wide Adoption
+
+To get the highest return on investment from Rapto AI, incorporate these four operational best practices into your team's workflow:
+
+1. **State Clear Deliverables in Standups**: While Rapto extracts implicit commitments, adopting a clean *"Who, What, By When"* verbal cadence ensures 99%+ extraction confidence. (e.g., *"I will finish the billing API integration by Wednesday 2 PM"*).
+2. **Review the My Commitments Widget Daily**: Make the My Commitments widget your personal morning launchpad. Toggling items as done synchronizes progress directly back to your project management boards.
+3. **Use the Team Pulse Metric in Sprint Retros**: Open the Team Pulse widget during sprint retrospectives to analyze your squad's follow-through velocity objectively without singling out individuals.
+4. **Connect Both Issue Trackers and Slack**: Linking Linear/Jira ensures technical tracking, while connecting Slack ensures non-technical stakeholders stay informed without asking for manual status updates.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+### How long does it take to onboard a 20-person engineering team?
+The workspace creator can complete account setup, calendar sync, and workspace slug configuration in under 4 minutes. Once team invites are sent, teammates can join with a single click via Google SSO and begin tracking commitments immediately.
+
+### What conferencing platforms are supported?
+Rapto AI natively supports **Google Meet**, **Zoom**, and **Microsoft Teams**. The capture engine automatically recognizes meeting links from your synchronized Google or Outlook calendar.
+
+### Can I try Rapto AI before purchasing?
+Yes. Rapto AI offers a **14-day free trial** with full access to all features, including cross-meeting memory, Linear and Jira integrations, and unlimited automated transcription. No credit card is required to start.
+
+### How does Rapto AI handle data privacy and security?
+Rapto AI is architected with enterprise-grade security. All audio and transcript data is encrypted in transit (TLS 1.3) and at rest (AES-256). We enforce strict tenant isolation using PostgreSQL Row-Level Security (RLS) and adhere to zero-data-retention AI inference protocols. Your proprietary discussions are never used to train public machine learning models.
+
+### What happens if two teammates connect their calendars to the same meeting?
+Rapto AI features an intelligent **deduplication service**. When multiple team members are invited to the same conference call, Rapto computes a unique cryptographic meeting signature and dispatches exactly one bot attendee to prevent duplicate recordings.
+
+---
+
+## Conclusion & Next Steps
+
+Getting started with Rapto AI is simple, fast, and designed to fit seamlessly into your team's existing workflow. By automating commitment extraction, eliminating passive transcript waste, and connecting spoken words directly to Linear, Jira, and Slack, your squad can finally close the Accountability Gap.
+
+Ready to transform your meeting culture?
+
+* **[Create your free workspace at app.rapto.cloud/register](https://app.rapto.cloud/register)**
+* Read our deep-dive on [AI Meeting Accountability Frameworks](/blog/ai-meeting-accountability-guide)
+* Explore the technical [Rapto AI System Design & Architecture](/blog/rapto-ai-backend-architecture-system-design)
+* Learn how to optimize your [Daily Engineering Standups](/blog/engineering-standups-commitment-tracking)
