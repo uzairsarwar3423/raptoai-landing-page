@@ -17,7 +17,7 @@ export function ArticleShareBar({ title, slug, className = "" }: ArticleShareBar
     if (typeof window !== "undefined") {
       return `${window.location.origin}/blog/${slug}`;
     }
-    return `https://rapto.ai/blog/${slug}`;
+    return `https://rapto.cloud/blog/${slug}`;
   };
 
   const handleCopy = () => {

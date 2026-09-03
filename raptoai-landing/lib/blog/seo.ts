@@ -1,6 +1,6 @@
 import { BlogPost, Author, Category } from "./types";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
 
 export function generateArticleSchema(post: BlogPost) {
   return {

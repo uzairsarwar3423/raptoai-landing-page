@@ -111,7 +111,7 @@ export const TERMS_SECTIONS: TermsSection[] = [
     ],
     content: {
       paragraphs: [
-        `These Terms of Service ("Terms") constitute a legally binding agreement between you (individually or on behalf of the entity you represent, "Customer", "you", or "your") and ${TERMS_METADATA.companyName} ("Rapto", "we", "us", or "our"), governing your access to and use of the Rapto meeting intelligence platform, website (rapto.ai, rapto.cloud), desktop applications, browser extensions, APIs, and integrations (collectively, the "Services").`,
+        `These Terms of Service ("Terms") constitute a legally binding agreement between you (individually or on behalf of the entity you represent, "Customer", "you", or "your") and ${TERMS_METADATA.companyName} ("Rapto", "we", "us", or "our"), governing your access to and use of the Rapto meeting intelligence platform, website (rapto.cloud), desktop applications, browser extensions, APIs, and integrations (collectively, the "Services").`,
         "By clicking 'Sign Up', 'Start Free Trial', creating an account, or otherwise accessing or using our Services, you expressly acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy, which is incorporated herein by reference.",
       ],
       subsections: [
@@ -370,7 +370,7 @@ export const TERMS_SECTIONS: TermsSection[] = [
     shortSummary: "99.9% uptime target, maintenance windows, performance commitments, and status monitoring.",
     plainEnglishSummary: [
       "We target 99.9% uptime for all paid workspace tiers.",
-      "Live platform status and incident logs are publicly visible at status.rapto.ai.",
+      "Live platform status and incident logs are publicly visible at status.rapto.cloud.",
       "Scheduled maintenance is performed during off-peak hours with advance notice.",
     ],
     content: {
@@ -378,7 +378,7 @@ export const TERMS_SECTIONS: TermsSection[] = [
         `Rapto strives to maintain high availability and reliability. For paid subscription tiers (Growth, Business, Enterprise), we target an uptime availability of ninety-nine and nine-tenths percent (${TERMS_METADATA.slaUptime}) during each calendar month.`,
       ],
       listItems: [
-        "Live System Health: Real-time service status, API latencies, and incident history are transparently tracked at status.rapto.ai.",
+        "Live System Health: Real-time service status, API latencies, and incident history are transparently tracked at status.rapto.cloud.",
         "Scheduled Maintenance: We perform routine infrastructure upgrades during off-peak weekend windows and provide advance notice in the dashboard.",
         "Emergency Maintenance: In rare cases of critical security patches, emergency maintenance may be performed with immediate notification.",
       ],

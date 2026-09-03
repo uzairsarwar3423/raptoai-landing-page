@@ -147,7 +147,7 @@ export default async function Image() {
             <span style={{ color: "#34d399" }}>✓</span> SOC-2 Type II Certified
           </div>
           <div style={{ marginLeft: "auto", color: "#64748b", fontSize: "16px", fontFamily: "monospace" }}>
-            rapto.ai
+            rapto.cloud
           </div>
         </div>
       </div>

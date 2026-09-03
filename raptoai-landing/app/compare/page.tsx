@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Cross-meeting memory, bi-directional Linear/Jira sync, and flat squad rates vs per-seat transcription taxes.",
     type: "website",
-    url: "https://rapto.ai/compare",
+    url: "https://rapto.cloud/compare",
   },
   twitter: {
     card: "summary_large_image",
@@ -32,7 +32,7 @@ export default function ComparePage() {
     publisher: {
       "@type": "Organization",
       name: "Rapto Technologies, Inc.",
-      url: "https://rapto.ai",
+      url: "https://rapto.cloud",
     },
   };
 

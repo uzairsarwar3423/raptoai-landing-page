@@ -21,8 +21,8 @@ export const footerColumns = [
   {
     header: "Resources",
     links: [
-      { label: "Help Center", href: "https://help.rapto.ai" },
-      { label: "API Docs", href: "https://docs.rapto.ai" },
+      { label: "Help Center", href: "https://help.rapto.cloud" },
+      { label: "API Docs", href: "https://docs.rapto.cloud" },
       { label: "Compare", href: "/compare/vs-fireflies" },
       { label: "Case Studies", href: "/customers" },
     ],
@@ -38,4 +38,4 @@ export const footerColumns = [
   },
 ] as const;
 
-export const statusPageUrl = "https://status.rapto.ai";
+export const statusPageUrl = "https://status.rapto.cloud";

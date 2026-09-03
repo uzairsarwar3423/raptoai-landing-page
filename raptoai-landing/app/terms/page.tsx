@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Customer data ownership, zero AI foundation model training, 1-click cancellation, and enterprise SLA commitments.",
     type: "website",
-    url: "https://rapto.ai/terms",
+    url: "https://rapto.cloud/terms",
   },
   twitter: {
     card: "summary_large_image",
@@ -32,7 +32,7 @@ export default function TermsPage() {
     publisher: {
       "@type": "Organization",
       name: "Rapto Technologies, Inc.",
-      url: "https://rapto.ai",
+      url: "https://rapto.cloud",
       address: {
         "@type": "PostalAddress",
         streetAddress: "548 Market St, Suite 39201",

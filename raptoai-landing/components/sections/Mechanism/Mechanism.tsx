@@ -98,7 +98,7 @@ export function Mechanism() {
     <section
       ref={sectionRef}
       className="relative bg-[hsl(160,14%,7%)] py-12 md:py-20"
-      aria-label="How Vocaply works"
+      aria-label="How Rapto works"
     >
       {/* Subtle background ambient dot grid */}
       <div
@@ -138,7 +138,7 @@ export function Mechanism() {
           variants={revealUp}
           className="mt-3 sm:mt-4 font-body leading-relaxed text-xs sm:text-sm md:text-base text-[hsl(160,6%,68%)] max-w-lg"
         >
-          Vocaply's pipeline runs the moment your call ends. No setup. No prompting.
+          Rapto's pipeline runs the moment your call ends. No setup. No prompting.
         </motion.p>
       </motion.div>
 
@@ -308,7 +308,7 @@ export function Mechanism() {
                 </div>
                 <div className="flex items-center gap-2 font-mono text-[0.6875rem] text-[hsl(160,6%,68%)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[hsl(149,45%,55%)] animate-pulse" />
-                  <span>VOCAPLY PIPELINE</span>
+                  <span>RAPTO PIPELINE</span>
                 </div>
                 <div className="font-mono text-[0.6875rem] text-[hsl(149,45%,55%)] font-semibold">
                   0{activeStep + 1} / 0{stepCount}

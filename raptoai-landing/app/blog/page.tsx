@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 import { Sparkles, Layers } from "lucide-react";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
 
 export const metadata: Metadata = {
   title: "Rapto Blog — AI Meeting Accountability & Engineering Intelligence",

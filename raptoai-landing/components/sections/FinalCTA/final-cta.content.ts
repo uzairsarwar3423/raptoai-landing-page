@@ -7,7 +7,7 @@ export const finalCTAContent = {
   },
   secondaryCTA: {
     label: "Book a 15-min demo",
-    href: "mailto:demo@rapto.cloud?subject=Vocaply%20Demo%20Request",
+    href: "mailto:demo@rapto.cloud?subject=Rapto%20Demo%20Request",
   },
   trustLine: "No credit card required · 5 free meetings/mo · Works with Zoom, Meet & Teams",
 };

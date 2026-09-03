@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export function JsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -21,7 +21,7 @@ export function JsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "support@rapto.ai",
+      email: "support@rapto.cloud",
       url: `${siteUrl}/about`,
     },
   };

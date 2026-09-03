@@ -15,7 +15,7 @@ interface PageProps {
   params: Promise<{ tag: string }>;
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
 
 export async function generateStaticParams() {
   const tags = getAllTags();

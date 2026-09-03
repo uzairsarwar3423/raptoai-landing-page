@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "GDPR Article 28 & Standard Contractual Clauses (SCCs) compliance, zero AI model training guarantee, and enterprise data protection standards.",
     type: "website",
-    url: "https://rapto.ai/legal/dpa",
+    url: "https://rapto.cloud/legal/dpa",
   },
   twitter: {
     card: "summary_large_image",
@@ -33,7 +33,7 @@ export default function DPAPage() {
     publisher: {
       "@type": "Organization",
       name: "Rapto Technologies, Inc.",
-      url: "https://rapto.ai",
+      url: "https://rapto.cloud",
       address: {
         "@type": "PostalAddress",
         streetAddress: "548 Market St, Suite 39201",

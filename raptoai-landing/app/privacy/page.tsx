@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Zero AI training on customer transcripts, end-to-end encryption, and full GDPR/CCPA compliance.",
     type: "website",
-    url: "https://rapto.ai/privacy",
+    url: "https://rapto.cloud/privacy",
   },
   twitter: {
     card: "summary_large_image",
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
     publisher: {
       "@type": "Organization",
       name: "Rapto Technologies, Inc.",
-      url: "https://rapto.ai",
+      url: "https://rapto.cloud",
     },
     inLanguage: "en-US",
     datePublished: "2026-01-01",

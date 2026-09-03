@@ -62,7 +62,7 @@ export const PRIVACY_SECTIONS: PrivacySection[] = [
     shortSummary: "Our binding commitment to transparency, data minimization, and user privacy.",
     content: {
       paragraphs: [
-        `This Privacy Policy explains how ${PRIVACY_METADATA.companyName} ("Rapto", "we", "us", or "our") collects, uses, processes, stores, and protects information when you access or use our AI meeting intelligence platform, website (rapto.ai, rapto.cloud), desktop apps, browser extensions, and integrations (collectively, the "Services").`,
+        `This Privacy Policy explains how ${PRIVACY_METADATA.companyName} ("Rapto", "we", "us", or "our") collects, uses, processes, stores, and protects information when you access or use our AI meeting intelligence platform, website (rapto.cloud), desktop apps, browser extensions, and integrations (collectively, the "Services").`,
         "Rapto is engineered from the ground up for high-trust engineering and product teams. We believe that privacy is not an afterthought, but a core architectural requirement. We adhere strictly to the principle of data minimization—we only collect and process the information strictly required to deliver accurate meeting summaries, commitment tracking, and workflow automation.",
       ],
       callout: {

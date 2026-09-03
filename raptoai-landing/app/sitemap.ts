@@ -5,7 +5,7 @@ import { getAllTags } from "@/lib/blog/tags";
 import { getAllAuthors } from "@/lib/blog/authors";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
+  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
   const now = new Date();
 
   const blogPosts = getAllPosts();

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Onboard every engineer, designer, and PM without per-seat line-item friction. Explore flat team plans with a 14-day free trial.",
     type: "website",
-    url: "https://rapto.ai/pricing",
+    url: "https://rapto.cloud/pricing",
   },
   twitter: {
     card: "summary_large_image",

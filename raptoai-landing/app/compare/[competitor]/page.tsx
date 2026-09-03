@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `Rapto vs ${competitor.name} — Feature & Pricing Breakdown`,
       description: competitor.verdictDescription,
-      url: `https://rapto.ai/compare/${competitor.slug}`,
+      url: `https://rapto.cloud/compare/${competitor.slug}`,
       type: "website",
     },
   };
@@ -68,7 +68,7 @@ export default async function CompetitorComparePage({ params }: PageProps) {
     publisher: {
       "@type": "Organization",
       name: "Rapto Technologies, Inc.",
-      url: "https://rapto.ai",
+      url: "https://rapto.cloud",
     },
   };
 

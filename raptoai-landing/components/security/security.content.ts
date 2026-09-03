@@ -61,7 +61,7 @@ export const SECURITY_METADATA = {
   securityContact: "security@rapto.cloud",
   dpoContact: "privacy@rapto.cloud",
   pgpKeyFingerprint: "4A9F 88B1 C23D 990E 71F6  8E34 5510 293B A89C 4401",
-  statusPage: "https://status.rapto.ai",
+  statusPage: "https://status.rapto.cloud",
 };
 
 export const SECURITY_METRICS = [

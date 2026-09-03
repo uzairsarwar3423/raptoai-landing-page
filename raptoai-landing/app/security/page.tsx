@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Explore Rapto's security architecture: SOC 2 Type II compliance, zero foundation model training on customer transcripts, end-to-end encryption, and enterprise sub-processor governance.",
     type: "website",
-    url: "https://rapto.ai/security",
+    url: "https://rapto.cloud/security",
   },
   twitter: {
     card: "summary_large_image",
@@ -37,9 +37,9 @@ export default function SecurityPage() {
     publisher: {
       "@type": "Organization",
       name: "Rapto Technologies, Inc.",
-      url: "https://rapto.ai",
+      url: "https://rapto.cloud",
       sameAs: [
-        "https://status.rapto.ai",
+        "https://status.rapto.cloud",
         "https://github.com/rapto-ai",
       ],
       address: {

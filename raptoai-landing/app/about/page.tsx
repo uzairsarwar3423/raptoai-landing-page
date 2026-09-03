@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "About Rapto — Meeting Accountability Platform",
     description:
       "The story behind Rapto: Why we built the first AI platform that remembers meeting commitments and automates cross-meeting follow-through.",
-    url: "https://rapto.ai/about",
+    url: "https://rapto.cloud/about",
     type: "website",
   },
   twitter: {
@@ -36,8 +36,8 @@ export default function AboutPage() {
     publisher: {
       "@type": "Organization",
       name: "Rapto AI",
-      url: "https://rapto.ai",
-      logo: "https://rapto.ai/rapto-ai.svg",
+      url: "https://rapto.cloud",
+      logo: "https://rapto.cloud/rapto-ai.svg",
     },
   };
 

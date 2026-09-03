@@ -15,9 +15,9 @@ export const mechanismSteps: MechanismStep[] = [
     number: "01",
     title: "Record any meeting",
     description:
-      "Bot-less or bot — Vocaply captures every word automatically the moment your call ends.",
+      "Bot-less or bot — Rapto captures every word automatically the moment your call ends.",
     imageSrc: "/mechanism/step-02-meetings.png",
-    imageAlt: "Vocaply meetings list — all recorded and processed meetings",
+    imageAlt: "Rapto meetings list — all recorded and processed meetings",
   },
   {
     id: "summary",
@@ -26,7 +26,7 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "A crisp summary, key decisions, and next steps — generated in under a second.",
     imageSrc: "/mechanism/step-05-meeting-detail.png",
-    imageAlt: "Vocaply meeting detail — AI summary, transcript, commitments, action items",
+    imageAlt: "Rapto meeting detail — AI summary, transcript, commitments, action items",
   },
   {
     id: "commitments",
@@ -35,7 +35,7 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "Commitments are extracted automatically — each one linked to the person who made it.",
     imageSrc: "/mechanism/step-03-commitments.png",
-    imageAlt: "Vocaply commitments page — every promise tracked with status and confidence",
+    imageAlt: "Rapto commitments page — every promise tracked with status and confidence",
   },
   {
     id: "accountability",
@@ -44,6 +44,6 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "Action items assigned, scores tracked, the whole team visible at a glance.",
     imageSrc: "/mechanism/step-01-dashboard.png",
-    imageAlt: "Vocaply dashboard — team pulse, commitments score, action items overview",
+    imageAlt: "Rapto dashboard — team pulse, commitments score, action items overview",
   },
 ];

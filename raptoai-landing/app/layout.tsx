@@ -6,7 +6,7 @@ import { CookieConsent } from "@/components/ui/cookie-consent";
 import { JsonLd } from "@/components/seo/JsonLd";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
 
 export const viewport: Viewport = {
   themeColor: [
