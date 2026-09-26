@@ -17,12 +17,28 @@ export const metadata: Metadata = {
       "Cross-meeting memory, bi-directional Linear/Jira sync, and flat squad rates vs per-seat transcription taxes.",
     type: "website",
     url: "https://rapto.cloud/compare",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto vs Traditional Note-Takers Competitive Comparison Hub",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rapto vs Competitors — Compare AI Meeting Tools",
     description:
       "Why high-performing engineering squads choose active commitment intelligence over passive notes.",
+    images: [
+      {
+        url: "/twitter-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto vs Competitors — Compare AI Meeting Tools",
+      },
+    ],
   },
 };
 

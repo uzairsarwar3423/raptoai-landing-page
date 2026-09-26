@@ -9,7 +9,8 @@ export function TrustedLogo({ logo, ariaHidden = false }: { logo: IntegrationLog
     >
       <Image 
         src={logo.svgPath} 
-        alt={ariaHidden ? "" : `${logo.name} logo`} 
+        alt={ariaHidden ? "" : `${logo.name} meeting integration for Rapto AI`} 
+        title={ariaHidden ? undefined : `${logo.name} integration with Rapto AI`}
         width={140} 
         height={40} 
         className="h-full w-auto object-contain"

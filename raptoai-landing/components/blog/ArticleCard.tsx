@@ -27,6 +27,7 @@ export function ArticleCard({ post, className = "" }: ArticleCardProps) {
         <Image
           src={post.coverImage}
           alt={post.coverImageAlt || post.title}
+          title={post.title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -70,7 +71,7 @@ export function ArticleCard({ post, className = "" }: ArticleCardProps) {
             <div className="relative w-7 h-7 rounded-full overflow-hidden border border-[var(--color-brand-500)]/20">
               <Image
                 src={post.author.avatar}
-                alt={post.author.name}
+                alt={`${post.author.name}, ${post.author.role} at Rapto AI`}
                 fill
                 className="object-cover"
                 sizes="28px"

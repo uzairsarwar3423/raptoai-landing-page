@@ -14,16 +14,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const authors = getAllAuthors();
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${base}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
-    { url: `${base}/pricing`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${base}/security`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-    { url: `${base}/compare`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-    { url: `${base}/compare/vs-fireflies`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/compare/vs-otter`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/compare/vs-fathom`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/compare/vs-granola`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    {
+      url: base,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1.0,
+      images: [
+        `${base}/og/default-og.png`,
+        `${base}/mechanism/step-01-dashboard.png`,
+        `${base}/mechanism/step-02-meetings.png`,
+        `${base}/mechanism/step-03-commitments.png`,
+        `${base}/mechanism/step-05-meeting-detail.png`,
+      ],
+    },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.9, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/pricing`, lastModified: now, changeFrequency: "weekly", priority: 0.9, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/security`, lastModified: now, changeFrequency: "weekly", priority: 0.85, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/compare`, lastModified: now, changeFrequency: "weekly", priority: 0.85, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/compare/vs-fireflies`, lastModified: now, changeFrequency: "monthly", priority: 0.8, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/compare/vs-otter`, lastModified: now, changeFrequency: "monthly", priority: 0.8, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/compare/vs-fathom`, lastModified: now, changeFrequency: "monthly", priority: 0.8, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/compare/vs-granola`, lastModified: now, changeFrequency: "monthly", priority: 0.8, images: [`${base}/og/default-og.png`] },
+    { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7, images: [`${base}/og/default-og.png`] },
     { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/legal/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/legal/dpa`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
@@ -34,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.updatedAt || post.publishedAt),
     changeFrequency: "weekly",
     priority: post.topicCluster === "pillar" ? 0.9 : 0.85,
+    images: [post.coverImage],
   }));
 
   const categoryRoutes: MetadataRoute.Sitemap = categories.map((cat) => ({

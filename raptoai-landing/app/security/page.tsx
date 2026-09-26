@@ -22,11 +22,27 @@ export const metadata: Metadata = {
       "Explore Rapto's security architecture: SOC 2 Type II compliance, zero foundation model training on customer transcripts, end-to-end encryption, and enterprise sub-processor governance.",
     type: "website",
     url: "https://rapto.cloud/security",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto AI Enterprise Security Architecture and Compliance",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Security & Trust | Rapto AI Meeting Intelligence",
     description: "Enterprise security by design: SOC 2 Type II, zero AI model training, and AES-256 encryption.",
+    images: [
+      {
+        url: "/twitter-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto AI Enterprise Security Architecture and Compliance",
+      },
+    ],
   },
 };
 

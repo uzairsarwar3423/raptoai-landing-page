@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Rapto — AI Meeting Accountability";
+export const alt = "Rapto AI — Automated Meeting Accountability and Action Item Tracking Platform";
 export const size = {
   width: 1200,
   height: 630,

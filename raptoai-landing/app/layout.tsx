@@ -84,7 +84,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Rapto — AI Meeting Accountability Platform",
+        alt: "Rapto AI — Automated Meeting Accountability and Action Item Tracking Platform",
         type: "image/png",
       },
     ],
@@ -95,7 +95,14 @@ export const metadata: Metadata = {
     description:
       "AI that tracks every spoken commitment across Zoom, Meet & Teams — auto-syncs to Linear, Jira & Slack. Teams see 3× higher follow-through. Start free, no card.",
     creator: "@raptoai",
-    images: ["/twitter-image"],
+    images: [
+      {
+        url: "/twitter-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto AI — Automated Meeting Accountability and Action Item Tracking Platform",
+      },
+    ],
   },
   robots: {
     index: true,

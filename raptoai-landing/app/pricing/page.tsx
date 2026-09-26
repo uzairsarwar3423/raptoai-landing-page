@@ -16,12 +16,28 @@ export const metadata: Metadata = {
       "Onboard every engineer, designer, and PM without per-seat line-item friction. Explore flat team plans with a 14-day free trial.",
     type: "website",
     url: "https://rapto.cloud/pricing",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto AI Pricing — Transparent Flat Squad Rates",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rapto Pricing — Flat Team Rates, Zero Seat Anxiety",
     description:
       "Predictable team rates for AI meeting intelligence and commitment tracking. No seat taxes.",
+    images: [
+      {
+        url: "/twitter-image",
+        width: 1200,
+        height: 630,
+        alt: "Rapto AI Pricing — Transparent Flat Squad Rates",
+      },
+    ],
   },
 };
 

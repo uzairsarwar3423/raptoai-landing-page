@@ -19,6 +19,15 @@
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
 
+/**
+ * SITE_CANONICAL — the canonical URL for the homepage root.
+ * Always ends with a trailing slash per the target spec: https://rapto.cloud/
+ *
+ * Sub-pages build their canonicals as: `${SITE_URL}/${path}`
+ * e.g. `${SITE_URL}/pricing` → https://rapto.cloud/pricing
+ */
+export const SITE_CANONICAL = `${SITE_URL}/`;
+
 /** Primary signup / trial registration flow */
 export const REGISTER_URL = "https://app.rapto.cloud/register";
 

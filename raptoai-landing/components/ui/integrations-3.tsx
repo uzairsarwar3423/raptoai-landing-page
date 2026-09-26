@@ -46,7 +46,7 @@ const integrations = [
   {
     name: 'Google Calendar',
     description: 'Track meeting schedules and trigger automated post-call accountability pipelines.',
-    icon: '/integrations/google-calender.svg',
+    icon: '/integrations/google-calendar.svg',
   },
 ];
 
@@ -72,9 +72,11 @@ export default function Integrations3() {
               <div className="bg-background mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
                 <Image
                   src={item.icon}
-                  alt={item.name}
+                  alt={`${item.name} integration for Rapto AI meeting intelligence and task tracking`}
+                  title={`${item.name} integration with Rapto AI`}
                   width={32}
                   height={32}
+                  loading="lazy"
                   className="h-7 w-7 object-contain"
                 />
               </div>

@@ -10,7 +10,13 @@ export function JsonLd() {
     name: "Rapto AI",
     alternateName: "Rapto",
     url: siteUrl,
-    logo: `${siteUrl}/rapto-ai.svg`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/icon-512.png`,
+      width: 512,
+      height: 512,
+      caption: "Rapto AI Logo",
+    },
     description:
       "Rapto is an AI meeting accountability platform that captures every spoken commitment and follows up automatically across meetings.",
     foundingDate: "2025",
@@ -42,7 +48,19 @@ export function JsonLd() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, macOS, Windows",
     url: siteUrl,
-    image: `${siteUrl}/rapto-ai.svg`,
+    image: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/og/default-og.png`,
+      width: 1200,
+      height: 630,
+      caption: "Rapto AI Meeting Accountability Platform",
+    },
+    screenshot: [
+      `${siteUrl}/mechanism/step-01-dashboard.png`,
+      `${siteUrl}/mechanism/step-02-meetings.png`,
+      `${siteUrl}/mechanism/step-03-commitments.png`,
+      `${siteUrl}/mechanism/step-05-meeting-detail.png`,
+    ],
     description:
       "AI Meeting Accountability Platform. Remembers every meeting commitment and automates follow-through across Zoom, Google Meet, and Microsoft Teams.",
     offers: [
@@ -235,7 +253,11 @@ export function JsonLd() {
       name: "Rapto",
     },
     url: siteUrl,
-    image: `${siteUrl}/rapto-ai.svg`,
+    image: [
+      `${siteUrl}/og/default-og.png`,
+      `${siteUrl}/mechanism/step-01-dashboard.png`,
+      `${siteUrl}/mechanism/step-03-commitments.png`,
+    ],
     offers: {
       "@type": "AggregateOffer",
       lowPrice: "0",

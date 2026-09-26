@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   VideoCamera,
@@ -241,12 +242,13 @@ export function WhyUsBento({
                     damping: 22,
                   }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={src}
-                    alt={`Team member avatar ${i + 1}`}
+                    alt={`Product engineering team member collaborating on meeting commitments and action item resolution (Member ${i + 1})`}
+                    title={`Team member ${i + 1} commitment profile`}
                     width={40}
                     height={40}
+                    unoptimized
                     className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />

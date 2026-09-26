@@ -12,6 +12,6 @@ export const trustedBrandLogos: IntegrationLogo[] = [
   { name: "Jira",             slug: "jira",             svgPath: "/integrations/jira.svg" },
   { name: "Linear",           slug: "linear",           svgPath: "/integrations/linear.svg" },
   { name: "Notion",           slug: "notion",           svgPath: "/integrations/notion.svg" },
-  { name: "Google Calendar",  slug: "google-calendar",  svgPath: "/integrations/google-calender.svg" },
+  { name: "Google Calendar",  slug: "google-calendar",  svgPath: "/integrations/google-calendar.svg" },
   { name: "Outlook Calendar", slug: "outlook",          svgPath: "/integrations/outlook.svg" },
 ];

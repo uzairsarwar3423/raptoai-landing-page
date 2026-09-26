@@ -27,6 +27,7 @@ export function FeaturedArticleCard({ post, className = "" }: FeaturedArticleCar
           <Image
             src={post.coverImage}
             alt={post.coverImageAlt || post.title}
+            title={post.title}
             fill
             priority
             className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -89,7 +90,7 @@ export function FeaturedArticleCard({ post, className = "" }: FeaturedArticleCar
               <div className="relative w-10 h-10 rounded-full overflow-hidden border border-[var(--color-brand-500)]/30">
                 <Image
                   src={post.author.avatar}
-                  alt={post.author.name}
+                  alt={`${post.author.name}, ${post.author.role} at Rapto AI`}
                   fill
                   className="object-cover"
                   sizes="40px"

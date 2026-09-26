@@ -18,11 +18,27 @@ export const metadata: Metadata = {
       "The story behind Rapto: Why we built the first AI platform that remembers meeting commitments and automates cross-meeting follow-through.",
     url: "https://rapto.cloud/about",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "About Rapto AI — Autonomous Meeting Accountability",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "About Rapto AI",
     description: "Building the intelligence layer for workplace meeting commitments and follow-through.",
+    images: [
+      {
+        url: "/twitter-image",
+        width: 1200,
+        height: 630,
+        alt: "About Rapto AI — Autonomous Meeting Accountability",
+      },
+    ],
   },
 };
 

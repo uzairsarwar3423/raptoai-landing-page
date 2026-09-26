@@ -343,6 +343,7 @@ export function Mechanism() {
                     <Image
                       src={activeStepData.imageSrc}
                       alt={activeStepData.imageAlt}
+                      title={`${activeStepData.title} — Rapto AI Meeting Intelligence`}
                       fill
                       className="object-cover object-top"
                       priority={activeStep === 0}

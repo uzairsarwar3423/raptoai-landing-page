@@ -13,16 +13,18 @@ import { HomeBlogPreview } from "@/components/sections/Blog/HomeBlogPreview";
 import { FinalCTA } from "@/components/sections/FinalCTA/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
+import { SITE_URL } from "@/lib/site-config";
 
 /**
- * Homepage metadata — sets an explicit self-referencing canonical.
+ * Homepage metadata — canonical MUST be the exact preferred URL for the root.
+ * Target: https://rapto.cloud/ (with trailing slash).
+ *
  * Root layout.tsx intentionally does NOT set a global canonical to prevent
- * sub-pages inheriting "/" as their canonical URL.
+ * sub-pages inheriting "/" as their canonical URL. Each page owns its own canonical.
  */
 export const metadata: Metadata = {
   alternates: {
-    canonical: siteUrl,
+    canonical: `${SITE_URL}/`,
   },
 };
 

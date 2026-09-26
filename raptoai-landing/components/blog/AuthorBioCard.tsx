@@ -23,7 +23,7 @@ export function AuthorBioCard({ author, className = "" }: AuthorBioCardProps) {
         >
           <Image
             src={author.avatar}
-            alt={author.name}
+            alt={`${author.name}, ${author.role} at Rapto AI`}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="80px"

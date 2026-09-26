@@ -17,7 +17,7 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "Bot-less or bot — Rapto captures every word automatically the moment your call ends.",
     imageSrc: "/mechanism/step-02-meetings.png",
-    imageAlt: "Rapto meetings list — all recorded and processed meetings",
+    imageAlt: "Rapto AI meeting list interface showing recorded Zoom, Google Meet, and Teams calls with automated transcripts",
   },
   {
     id: "summary",
@@ -26,7 +26,7 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "A crisp summary, key decisions, and next steps — generated in under a second.",
     imageSrc: "/mechanism/step-05-meeting-detail.png",
-    imageAlt: "Rapto meeting detail — AI summary, transcript, commitments, action items",
+    imageAlt: "Rapto AI meeting intelligence view featuring automated executive summaries, verified decisions, and timestamped transcripts",
   },
   {
     id: "commitments",
@@ -35,7 +35,7 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "Commitments are extracted automatically — each one linked to the person who made it.",
     imageSrc: "/mechanism/step-03-commitments.png",
-    imageAlt: "Rapto commitments page — every promise tracked with status and confidence",
+    imageAlt: "Rapto AI commitments dashboard tracking verbal promises made during meetings with owner attribution and confidence scores",
   },
   {
     id: "accountability",
@@ -44,6 +44,6 @@ export const mechanismSteps: MechanismStep[] = [
     description:
       "Action items assigned, scores tracked, the whole team visible at a glance.",
     imageSrc: "/mechanism/step-01-dashboard.png",
-    imageAlt: "Rapto dashboard — team pulse, commitments score, action items overview",
+    imageAlt: "Rapto AI team accountability and productivity dashboard showing commitment completion velocity and open action items",
   },
 ];

@@ -184,7 +184,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 >
                   <Image
                     src={post.author.avatar}
-                    alt={post.author.name}
+                    alt={`${post.author.name}, ${post.author.role} at Rapto AI`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform"
                     sizes="44px"
@@ -229,18 +229,22 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </header>
 
-          {/* Hero Cover Image */}
-          <div className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full max-w-5xl mx-auto rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-canvas-dark)] shadow-tier-2 mb-12">
+          {/* Hero Cover Image (Semantic figure + figcaption for Google Images & AEO) */}
+          <figure className="relative aspect-[21/9] sm:aspect-[2.4/1] w-full max-w-5xl mx-auto rounded-[var(--radius-xl)] overflow-hidden bg-[var(--color-canvas-dark)] shadow-tier-2 mb-12">
             <Image
               src={post.coverImage}
               alt={post.coverImageAlt || post.title}
+              title={post.title}
               fill
               priority
               className="object-cover"
               sizes="(max-width: 1280px) 100vw, 1200px"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            <figcaption className="sr-only">
+              {post.coverImageAlt || `${post.title} editorial cover illustration`}
+            </figcaption>
+          </figure>
 
           {/* Article Layout Grid (Content + Sticky Sidebar) */}
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">

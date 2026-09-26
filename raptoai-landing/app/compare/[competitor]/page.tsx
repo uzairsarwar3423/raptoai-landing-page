@@ -43,6 +43,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: competitor.verdictDescription,
       url: `https://rapto.cloud/compare/${competitor.slug}`,
       type: "website",
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: `Rapto vs ${competitor.name} Feature and Pricing Comparison`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Rapto vs ${competitor.name} — Feature & Pricing Breakdown`,
+      description: competitor.verdictDescription,
+      images: [
+        {
+          url: "/twitter-image",
+          width: 1200,
+          height: 630,
+          alt: `Rapto vs ${competitor.name} Feature and Pricing Comparison`,
+        },
+      ],
     },
   };
 }
