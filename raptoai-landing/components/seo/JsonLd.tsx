@@ -1,4 +1,5 @@
 import * as React from "react";
+import { HOME_FAQS } from "@/components/sections/FAQ/faq.content";
 
 export function JsonLd() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
@@ -13,6 +14,14 @@ export function JsonLd() {
     description:
       "Rapto is an AI meeting accountability platform that captures every spoken commitment and follows up automatically across meetings.",
     foundingDate: "2025",
+    knowsAbout: [
+      "AI Meeting Intelligence",
+      "Meeting Accountability",
+      "Automated Action Items",
+      "Linear Jira Slack Integration",
+      "Cross-Meeting Memory",
+      "Engineering Productivity"
+    ],
     sameAs: [
       "https://twitter.com/raptoai",
       "https://linkedin.com/company/raptoai",
@@ -29,9 +38,9 @@ export function JsonLd() {
   const softwareApplicationSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Rapto",
+    name: "Rapto AI",
     applicationCategory: "BusinessApplication",
-    operatingSystem: "Web, macOS, Windows, iOS, Android",
+    operatingSystem: "Web, macOS, Windows",
     url: siteUrl,
     image: `${siteUrl}/rapto-ai.svg`,
     description:
@@ -46,7 +55,7 @@ export function JsonLd() {
       },
       {
         "@type": "Offer",
-        name: "Pro Team Tier",
+        name: "Starter Squad Tier",
         price: "39",
         priceCurrency: "USD",
         priceSpecification: {
@@ -55,16 +64,22 @@ export function JsonLd() {
           priceCurrency: "USD",
           unitCode: "MON",
         },
-        description: "Unlimited meetings, full team accountability scoring, Slack and Linear sync.",
+        description: "Flat squad rate for up to 10 members, 40 meetings/mo, full Slack and Linear sync.",
+      },
+      {
+        "@type": "Offer",
+        name: "Growth Squad Tier",
+        price: "99",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "99",
+          priceCurrency: "USD",
+          unitCode: "MON",
+        },
+        description: "Flat squad rate for up to 25 members, unlimited meetings, Jira and Notion bi-directional sync.",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "148",
-      bestRating: "5",
-      worstRating: "1",
-    },
     featureList: [
       "Autonomous Promise & Commitment Extraction",
       "Cross-Meeting Automated Follow-Ups",
@@ -95,40 +110,185 @@ export function JsonLd() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
+    mainEntity: HOME_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const navigationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
       {
-        "@type": "Question",
-        name: "What makes Rapto different from transcription tools like Otter or Fireflies?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Traditional tools only transcribe and summarize audio. Rapto focuses on what happens after the meeting: it extracts concrete commitments, assigns owners, tracks deadlines, and follows up autonomously in subsequent meetings until each promise is fulfilled.",
-        },
+        "@type": "SiteNavigationElement",
+        position: 1,
+        name: "Pricing",
+        description: "Flat team pricing tiers with zero per-seat anxiety",
+        url: `${siteUrl}/pricing`,
       },
       {
-        "@type": "Question",
-        name: "Which video conferencing platforms does Rapto support?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Rapto works seamlessly with Zoom, Google Meet, and Microsoft Teams, supporting both botless recording (via calendar sync and audio capture) and AI bot assistants.",
-        },
+        "@type": "SiteNavigationElement",
+        position: 2,
+        name: "Competitor Comparison",
+        description: "Rapto vs Fireflies, Otter, Fathom, and Granola",
+        url: `${siteUrl}/compare`,
       },
       {
-        "@type": "Question",
-        name: "Is customer meeting audio used to train AI models?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No. Rapto enforces a strict zero-data-retention training policy. Your meeting audio and transcripts are never used to train public or foundation AI models, and all data is encrypted at rest and in transit (SOC-2 Type II compliant).",
-        },
+        "@type": "SiteNavigationElement",
+        position: 3,
+        name: "Security & Compliance",
+        description: "SOC-2 Type II compliance, zero AI training, and AES-256 encryption",
+        url: `${siteUrl}/security`,
       },
       {
-        "@type": "Question",
-        name: "How does Rapto sync with project management tools?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Rapto bi-directionally syncs commitments and action items directly into Slack channels, Linear issues, Jira tickets, and Notion databases without manual note-taking.",
-        },
+        "@type": "SiteNavigationElement",
+        position: 4,
+        name: "Engineering Blog",
+        description: "Architecture deep-dives, systems design, and meeting intelligence",
+        url: `${siteUrl}/blog`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 5,
+        name: "Integrations",
+        description: "Two-way integrations with Zoom, Teams, Linear, Slack, and Jira",
+        url: `${siteUrl}/#integrations`,
       },
     ],
+  };
+
+  /**
+   * HowTo Schema — targets step-by-step rich results in Google Search
+   * and is heavily cited by AI Overviews / Perplexity for procedural queries
+   * like "how does AI meeting accountability work".
+   * Maps directly to the 5-step pipeline shown in the WorkflowFeature section.
+   */
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How Rapto AI Tracks Meeting Commitments Automatically",
+    description:
+      "Rapto converts spoken meeting promises into tracked, verified deliverables using a 5-step autonomous AI pipeline — from call recording to confirmed follow-through.",
+    totalTime: "PT5M",
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "USD",
+      value: "0",
+    },
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Record",
+        text: "Rapto auto-joins your Zoom, Google Meet, or Microsoft Teams call via calendar sync. It supports both botless device-level audio capture and a standard AI meeting bot, depending on your organization's security policy.",
+        url: `${siteUrl}/#integrations`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Extract",
+        text: "Rapto's high-precision neural parser analyzes the live transcript in real time, extracting every spoken commitment, its owner, and any stated deadlines — with 99.4% extraction accuracy.",
+        url: `${siteUrl}/#why-rapto`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Assign",
+        text: "Each extracted commitment is auto-assigned to the responsible team member and immediately synced into your project management stack: Jira, Linear, Notion, or Slack — without any manual copy-paste.",
+        url: `${siteUrl}/#workflow-feature`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Sync",
+        text: "Rapto's cross-meeting neural memory links each open commitment across every subsequent call. When a standup or retro references a prior promise, Rapto automatically matches it to the original action item.",
+        url: `${siteUrl}/#workflow-feature`,
+      },
+      {
+        "@type": "HowToStep",
+        position: 5,
+        name: "Resolve",
+        text: "When a team member verbally confirms fulfillment in a subsequent meeting, Rapto automatically closes the linked Jira/Linear issue, updates the team accountability dashboard, and adjusts the individual's commitment score — zero manual entry required.",
+        url: `${siteUrl}/#why-rapto`,
+      },
+    ],
+  };
+
+  /**
+   * Product Schema — enables AggregateOffer display in Google Shopping-style
+   * knowledge panels and AI Overviews for "best AI meeting tool" comparison queries.
+   * Distinct from SoftwareApplication — both should be present.
+   */
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Rapto AI — Meeting Accountability Platform",
+    description:
+      "Autonomous AI meeting accountability software that converts spoken commitments into tracked deliverables with bi-directional Linear, Jira, Slack, and Notion sync.",
+    brand: {
+      "@type": "Brand",
+      name: "Rapto",
+    },
+    url: siteUrl,
+    image: `${siteUrl}/rapto-ai.svg`,
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: "0",
+      highPrice: "199",
+      priceCurrency: "USD",
+      offerCount: "4",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Free Plan",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/pricing`,
+        },
+        {
+          "@type": "Offer",
+          name: "Starter Plan",
+          price: "39",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/pricing`,
+        },
+        {
+          "@type": "Offer",
+          name: "Growth Plan",
+          price: "79",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/pricing`,
+        },
+        {
+          "@type": "Offer",
+          name: "Business Plan",
+          price: "159",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/pricing`,
+        },
+      ],
+    },
+    /**
+     * aggregateRating — ADD THIS once you have real G2/Capterra reviews.
+     * CAUTION: Do NOT fabricate ratings. Google can penalise for fake structured data.
+     *
+     * aggregateRating: {
+     *   "@type": "AggregateRating",
+     *   ratingValue: "4.8",
+     *   reviewCount: "47",
+     *   bestRating: "5",
+     *   worstRating: "1",
+     * },
+     */
   };
 
   return (
@@ -148,6 +308,20 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationSchema) }}
+      />
+      {/* HowTo: triggers step-by-step rich results + AI Overview citations */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      {/* Product: enables AggregateOffer in knowledge panels + comparison AI Overviews */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
     </>
   );

@@ -191,10 +191,10 @@ export function WorkflowFeature() {
               variants={revealUp}
               className="font-display font-medium tracking-tighter leading-[1.08] text-4xl sm:text-5xl text-[var(--color-ink-900)]"
             >
-              Run your accountability
+              How Rapto automates meeting
               <br />
               <span className="text-[var(--color-ink-500)]">
-                system — not just tasks.
+                action items from promise to delivery.
               </span>
             </motion.h2>
 

@@ -10,9 +10,12 @@ import { FinalCTA } from "@/components/sections/FinalCTA/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Security, Privacy & Trust — SOC 2 Type II Certified",
+  title: "Security, Privacy & Trust — SOC 2 Type II Certified | Rapto AI",
   description:
     "Enterprise-grade security by design: SOC 2 Type II certified, zero AI model training on customer data, FIPS 140-3 AES-256 encryption, TLS 1.3, SAML 2.0 SSO, and isolated dedicated cloud architecture.",
+  alternates: {
+    canonical: "https://rapto.cloud/security",
+  },
   openGraph: {
     title: "Security & Trust at Rapto — SOC 2 Type II & Zero AI Model Training",
     description:

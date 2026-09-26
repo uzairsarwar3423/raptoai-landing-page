@@ -21,11 +21,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Rapto — AI Meeting Accountability, Not Just Meeting Notes",
+    default: "Rapto AI — Automated Meeting Accountability & Action Item Tracker | Free for Teams",
     template: "%s | Rapto AI",
   },
   description:
-    "70% of meeting promises are never kept. Rapto listens to every call, captures every spoken commitment, and automates follow-through across Zoom, Google Meet, and Teams.",
+    "AI that tracks every spoken commitment across Zoom, Meet & Teams — auto-syncs to Linear, Jira & Slack. Teams see 3× higher follow-through. Start free, no card.",
   applicationName: "Rapto",
   authors: [{ name: "Rapto AI Team", url: siteUrl }],
   creator: "Rapto AI",
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     "meeting commitment tracker",
     "automated meeting follow-ups",
     "AI action item extraction",
+    "meeting action item tracker",
     "Zoom meeting commitment tracker",
     "Google Meet AI notes and tasks",
     "Microsoft Teams meeting accountability",
@@ -43,10 +44,10 @@ export const metadata: Metadata = {
     "meeting follow-through software",
     "botless meeting recorder",
     "Linear Slack meeting sync",
+    "Jira meeting action item sync",
   ],
-  alternates: {
-    canonical: "/",
-  },
+  // NOTE: No global canonical here — each page sets its own via generateMetadata / static metadata.
+  // Homepage canonical is set in app/page.tsx generateMetadata.
   icons: {
     icon: [
       { url: "/rapto-ai.svg", type: "image/svg+xml", sizes: "any" },
@@ -75,9 +76,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Rapto",
-    title: "Rapto — AI Meeting Accountability, Not Just Meeting Notes",
+    title: "Rapto AI — Automated Meeting Accountability & Action Item Tracker | Free for Teams",
     description:
-      "70% of meeting promises are never kept. Rapto listens to every call, captures every spoken commitment, and automates follow-through across meetings.",
+      "AI that tracks every spoken commitment across Zoom, Meet & Teams — auto-syncs to Linear, Jira & Slack. Teams see 3× higher follow-through. Start free, no card.",
     images: [
       {
         url: "/opengraph-image",
@@ -90,9 +91,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rapto — AI Meeting Accountability, Not Just Meeting Notes",
+    title: "Rapto AI — Automated Meeting Accountability & Action Item Tracker",
     description:
-      "70% of meeting promises are never kept. Rapto ensures yours are remembered and fulfilled across Zoom, Meet, and Teams.",
+      "AI that tracks every spoken commitment across Zoom, Meet & Teams — auto-syncs to Linear, Jira & Slack. Teams see 3× higher follow-through. Start free, no card.",
     creator: "@raptoai",
     images: ["/twitter-image"],
   },

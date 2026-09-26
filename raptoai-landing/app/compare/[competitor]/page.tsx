@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ComparePageContent } from "@/components/compare/ComparePageContent";
-import { COMPETITORS, CompetitorProfile } from "@/components/compare/compare.content";
+import { COMPETITORS, CompetitorProfile, COMPARE_FAQS } from "@/components/compare/compare.content";
 import { FinalCTA } from "@/components/sections/FinalCTA/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 
@@ -10,14 +10,9 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  const params: { competitor: string }[] = [];
-
-  COMPETITORS.forEach((comp) => {
-    params.push({ competitor: comp.slug });
-    params.push({ competitor: comp.id });
-  });
-
-  return params;
+  return COMPETITORS.map((comp) => ({
+    competitor: comp.slug,
+  }));
 }
 
 function resolveCompetitor(slugOrId: string): CompetitorProfile | undefined {
@@ -60,16 +55,57 @@ export default async function CompetitorComparePage({ params }: PageProps) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://rapto.cloud";
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: `Rapto vs ${competitor.name} Comparison`,
     description: competitor.verdictDescription,
+    url: `${siteUrl}/compare/${competitor.slug}`,
     publisher: {
       "@type": "Organization",
-      name: "Rapto Technologies, Inc.",
-      url: "https://rapto.cloud",
+      name: "Rapto AI",
+      url: siteUrl,
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Compare",
+        item: `${siteUrl}/compare`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `Rapto vs ${competitor.name}`,
+        item: `${siteUrl}/compare/${competitor.slug}`,
+      },
+    ],
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: COMPARE_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 
   return (
@@ -77,6 +113,14 @@ export default async function CompetitorComparePage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main className="bg-[var(--color-paper)] min-h-screen">
         <ComparePageContent initialCompetitorId={competitor.id} />

@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   VideoCamera,
@@ -17,14 +16,24 @@ import IsometricBox01 from "@/assets/svgs/isometric-box-01";
 import IsometricBoxes02 from "@/assets/svgs/isometric-boxes-02";
 import { cn } from "@/lib/utils";
 
-// Curated high-resolution professional avatars for team collaboration showcase
+/**
+ * Team avatars — generated via DiceBear API (free, no ToS restrictions, GDPR-safe).
+ * Using "bottts-neutral" style: abstract robot/gear shapes — visually polished for
+ * a B2B SaaS product card without implying real people.
+ *
+ * Seeds are deterministic: same seed string = same avatar. To change avatars,
+ * update the seed parameter (e.g., "rapto-team-1" → "rapto-team-a").
+ *
+ * Alternative style options: "shapes", "identicon", "pixel-art-neutral"
+ * Docs: https://www.dicebear.com/styles/bottts-neutral/
+ */
 const DEFAULT_TEAM_AVATARS = [
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120&auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&auto=format&fit=crop&q=80",
+  "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=rapto-alex&backgroundColor=b6e3f4",
+  "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=rapto-sam&backgroundColor=c0aede",
+  "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=rapto-morgan&backgroundColor=d1d4f9",
+  "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=rapto-casey&backgroundColor=ffd5dc",
+  "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=rapto-taylor&backgroundColor=b6e3f4",
+  "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=rapto-jordan&backgroundColor=c0aede",
 ];
 
 // Rapto AI Meeting Pipeline Steps
@@ -62,7 +71,7 @@ export function WhyUsBento({
         <SectionHeading
           align="center"
           eyebrow="WHY RAPTO AI"
-          headline="The Intelligence Layer After Your Meeting Ends"
+          headline="Automated Meeting Accountability & Action Item Tracking for Engineering Teams"
           subhead="Most meeting notes gather dust. Rapto converts spoken commitments into autonomous follow-ups, verified deliverables, and measurable team accountability."
         />
 
@@ -232,13 +241,14 @@ export function WhyUsBento({
                     damping: 22,
                   }}
                 >
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={src}
-                    alt="Team member"
-                    fill
-                    sizes="40px"
-                    className="object-cover object-center"
-                    unoptimized
+                    alt={`Team member avatar ${i + 1}`}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
                   />
                 </motion.div>
               ))}

@@ -25,6 +25,18 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/dev-tokens"],
       },
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "PerplexityBot",
+          "ClaudeBot",
+          "Google-Extended",
+          "Amazonbot",
+        ],
+        allow: "/",
+        disallow: ["/api/", "/dev-tokens"],
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,

@@ -96,6 +96,7 @@ export function Mechanism() {
 
   return (
     <section
+      id="mechanism"
       ref={sectionRef}
       className="relative bg-[hsl(160,14%,7%)] py-12 md:py-20"
       aria-label="How Rapto works"

@@ -23,12 +23,15 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
             <a
-              href="https://app.rapto.cloud/register"
+              href={heroContent.ctaPrimaryHref}
               className="px-8 py-3.5 rounded-full bg-white text-[var(--color-canvas-dark)] font-semibold hover:bg-white/90 transition-colors inline-block text-center"
             >
               {heroContent.ctaPrimary}
             </a>
-            <button className="relative group px-8 py-3.5 rounded-full text-white font-semibold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 overflow-hidden bg-[#0A0A0A]">
+            <a
+              href={heroContent.ctaSecondaryHref}
+              className="relative group px-8 py-3.5 rounded-full text-white font-semibold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 overflow-hidden bg-[#0A0A0A]"
+            >
 
               {/* Rotating neon background (Creates the animated border) */}
               <div className="absolute inset-[-100%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,var(--color-brand-300)_50%,transparent_100%)] opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
@@ -44,7 +47,7 @@ export function Hero() {
                 {heroContent.ctaSecondary.replace(' →', '')}
                 <span className="group-hover:translate-x-1 transition-transform duration-300 text-[var(--color-brand-300)]">→</span>
               </span>
-            </button>
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center gap-y-3 gap-x-4 sm:gap-x-6 opacity-80 mt-2">

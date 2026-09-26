@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { PricingCards } from "@/components/pricing/PricingCards";
 import { PricingMatrix } from "@/components/pricing/PricingMatrix";
+import { PricingRoiSnippet } from "@/components/pricing/PricingRoiSnippet";
 import { staggerContainer, revealUp } from "@/lib/motion/variants";
 
 export function Pricing() {
@@ -88,8 +89,11 @@ export function Pricing() {
         {/* Pricing Cards */}
         <PricingCards isAnnual={isAnnual} />
 
+        {/* Visual ROI Snippet — Flat Squad Rates vs Per-Seat Tax */}
+        <PricingRoiSnippet />
+
         {/* Feature Comparison Matrix */}
-        <div className="mt-12">
+        <div className="mt-16">
           <PricingMatrix isAnnual={isAnnual} defaultExpanded={false} />
         </div>
 

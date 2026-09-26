@@ -52,12 +52,15 @@ const integrations = [
 
 export default function Integrations3() {
   return (
-    <section className="bg-background py-20 content-auto">
+    <section id="integrations" className="bg-background py-20 content-auto">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 flex flex-col items-center text-center">
           <h2 className="text-foreground text-4xl font-semibold tracking-tight md:text-5xl">
-            Smarter tools for better teamwork
+            Sync meeting commitments to Jira, Linear, Slack & Notion automatically
           </h2>
+          <p className="text-muted-foreground mt-3 max-w-xl text-center text-sm sm:text-base">
+            Rapto auto-joins your Zoom, Google Meet, and Teams calls and syncs every extracted action item directly into your existing project management and communication stack — no copy-paste, no manual handoffs.
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -93,9 +96,14 @@ export default function Integrations3() {
             teams in sync.
           </p>
 
-          <button className="text-primary mt-4 text-sm font-medium hover:underline">
-            See all integrations →
-          </button>
+          <a
+            href="https://docs.rapto.cloud/integrations"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary mt-4 text-sm font-medium hover:underline inline-flex items-center gap-1"
+          >
+            Explore all integrations in docs →
+          </a>
         </div>
       </div>
     </section>

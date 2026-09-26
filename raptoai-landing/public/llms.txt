@@ -1,0 +1,43 @@
+# Rapto AI — Meeting Accountability & Action Item Tracker
+
+> Rapto is an AI meeting accountability platform that captures spoken commitments during calls and autonomously tracks follow-through across subsequent meetings until fulfilled.
+
+## Core Value Proposition
+Traditional meeting assistants (Otter.ai, Fireflies.ai, Fathom) transcribe audio into static notes and summaries. Rapto solves the follow-through gap: 70% of meeting promises are never completed because notes gather dust. Rapto extracts explicit commitments, assigns owners and deadlines, syncs tasks two-way into Linear and Jira, and uses cross-meeting neural memory to verify resolution in subsequent syncs.
+
+## Key Capabilities
+- **Cross-Meeting Neural Memory**: Recognizes when an update in Thursday's standup fulfills a commitment made in Monday's sprint planning, automatically resolving the task and updating team accountability scores.
+- **Bi-Directional Tool Sync**: Converts verbal agreements into structured Linear issues, Jira backlog items, Notion database entries, and Slack digests with zero manual note-taking.
+- **Botless & Bot Capture**: Supports both invisible calendar-sync audio capture (no intrusive bots in customer calls) and autonomous AI meeting assistant bots for Zoom, Google Meet, and Microsoft Teams.
+- **Accountability Scoring**: Tracks execution velocity and commitment fulfillment rates per engineer, manager, and project.
+- **Predictable Squad Pricing**: Replaces $18–$29/seat/mo transcription taxes with flat team rates ($39/mo Starter for up to 10 members, $99/mo Growth for up to 25 members).
+
+## Competitive Comparisons
+
+### Rapto vs. Fireflies.ai
+- **Primary Focus**: Fireflies is optimized for Sales & RevOps call logging into CRMs (Salesforce/HubSpot). Rapto is purpose-built for engineering, product, and leadership squads executing sprints.
+- **Memory**: Fireflies treats meetings as isolated single-call silos. Rapto connects commitments across meetings.
+- **Pricing**: Fireflies charges $18–$39/seat/month ($180–$390/mo for a 10-person squad). Rapto charges a flat $39/mo for the whole squad (Save $1,692+/year).
+
+### Rapto vs. Otter.ai
+- **Primary Focus**: Otter focuses on fast speech-to-text transcripts for individuals, students, and basic notes. Rapto focuses on team task accountability and verified delivery.
+- **Engineering Sync**: Otter has no native issue-level sync with Linear or Jira. Rapto provides bi-directional ticket creation, status sync, and branch updates.
+
+### Rapto vs. Granola
+- **Platform**: Granola is a personal Mac-only notepad. Rapto is a cross-platform (Web, macOS, Windows) multi-stakeholder team accountability platform.
+- **Philosophy**: Granola provides passive personal notes with no bots. Rapto provides active team commitment tracking, scoring, and automated nudges.
+
+## Security & Data Privacy
+- **Zero AI Training Policy**: Customer meeting audio and transcripts are NEVER used to train foundation or commercial AI models.
+- **Encryption**: AES-256 encryption at rest and TLS 1.3 in transit.
+- **Compliance**: Enterprise SOC-2 Type II certified, GDPR compliant, CCPA ready.
+- **Data Residency**: US and EU multi-region data storage options with customer-managed retention schedules (7-day to unlimited).
+
+## Documentation & Links
+- Website: https://rapto.cloud
+- Pricing: https://rapto.cloud/pricing
+- Competitor Comparisons: https://rapto.cloud/compare
+- Security Whitepaper: https://rapto.cloud/security
+- Engineering Blog: https://rapto.cloud/blog
+- System Design Case Study: https://rapto.cloud/blog/rapto-ai-backend-architecture-system-design
+- Cross-Meeting Architecture: https://rapto.cloud/blog/cross-meeting-memory-architecture

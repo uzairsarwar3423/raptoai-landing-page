@@ -4,9 +4,12 @@ import { FinalCTA } from "@/components/sections/FinalCTA/FinalCTA";
 import { Footer } from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Pricing & Team Plans — Flat Rates, Zero Seat Anxiety",
+  title: "Rapto AI Pricing — Flat Team Rates, No Per-Seat Fees | From $39/mo",
   description:
-    "Predictable flat team pricing for engineering & product squads. Compare Free, Starter, Growth, Business, and Enterprise tiers with zero per-seat friction.",
+    "Rapto's flat squad pricing starts at $39/mo for up to 10 members. No per-seat tax. Compare tiers, calculate your ROI, and start a free 14-day trial. No credit card required.",
+  alternates: {
+    canonical: "https://rapto.cloud/pricing",
+  },
   openGraph: {
     title: "Rapto Pricing — Flat Team Rates, Zero Seat Anxiety",
     description:

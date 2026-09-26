@@ -24,12 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/compare/vs-fathom`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/compare/vs-granola`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${base}/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/legal/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${base}/legal/privacy`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/legal/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/legal/dpa`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/dpa`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const blogPostRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({

@@ -7,7 +7,7 @@ import { staggerContainer, revealUp } from "@/lib/motion/variants";
 
 export function CostStats() {
   return (
-    <section className="relative bg-[var(--color-paper)] py-32 z-10 cost-stats-bg-pattern overflow-hidden border-t border-[var(--color-ink-900)]/5 content-auto">
+    <section id="problem-stats" className="relative bg-[var(--color-paper)] py-32 z-10 cost-stats-bg-pattern overflow-hidden border-t border-[var(--color-ink-900)]/5 content-auto">
       {/* Background glow to anchor the bento */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[var(--color-brand-100)]/20 blur-[120px] rounded-[100%] pointer-events-none" />
 
@@ -31,8 +31,8 @@ export function CostStats() {
             variants={revealUp}
             className="text-5xl md:text-6xl lg:text-7xl text-center max-w-4xl font-display font-medium text-[var(--color-ink-900)] tracking-tighter leading-[1.05]"
           >
-            This isn't a note-taking problem.<br className="hidden md:block" />
-            <span className="text-[var(--color-ink-500)]"> It's a follow-through problem.</span>
+            The hidden cost of untracked<br className="hidden md:block" />
+            <span className="text-[var(--color-ink-500)]"> meeting commitments.</span>
           </motion.h2>
 
           {/* Bento Grid */}

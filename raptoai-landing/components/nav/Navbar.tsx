@@ -33,7 +33,16 @@ export function Navbar() {
           </div>
           
           <NavCTAGroup />
-          <MobileNavDrawer />
+
+          <div className="flex items-center gap-2.5 lg:hidden">
+            <a
+              href="https://app.rapto.cloud/register"
+              className="px-3.5 py-1.5 text-xs font-semibold rounded-full bg-white text-black hover:bg-white/90 shadow-sm transition-all active:scale-95 whitespace-nowrap"
+            >
+              Try Free
+            </a>
+            <MobileNavDrawer />
+          </div>
         </Container>
       </header>
     </div>

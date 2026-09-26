@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Calendar } from "lucide-react";
-import { DitherShader } from "@/components/ui/dither-shader";
 import { finalCTAContent } from "./final-cta.content";
 import { staggerContainer, revealUp } from "@/lib/motion/variants";
 
@@ -14,21 +13,19 @@ export function FinalCTA() {
       id="final-cta"
       className="relative z-20 bg-[var(--color-canvas-dark)] text-[var(--color-ink-on-dark)] py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-white/10 content-auto"
     >
-      {/* Aceternity Dither Shader Background Layer */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-screen">
-        <DitherShader
-          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
-          gridSize={3}
-          ditherMode="bayer"
-          colorMode="duotone"
-          primaryColor="#07130e"
-          secondaryColor="#10b981"
-          animated={true}
-          animationSpeed={0.008}
-          threshold={0.45}
-          className="h-full w-full object-cover"
-        />
-      </div>
+      {/* High-Performance Atmospheric Mesh Glow (Zero External Image Fetch) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[400px] rounded-full bg-[var(--color-brand-500)]/15 blur-[120px] mix-blend-screen"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0 opacity-[0.035] pointer-events-none mix-blend-overlay"
+        style={{
+          backgroundImage:
+            'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")',
+        }}
+      />
 
       {/* Radial Mask & Vignette Overlay for Text Legibility */}
       <div className="absolute inset-0 z-0 bg-radial from-transparent via-[var(--color-canvas-dark)]/70 to-[var(--color-canvas-dark)] pointer-events-none" />
@@ -43,7 +40,6 @@ export function FinalCTA() {
           viewport={{ once: true, amount: 0.3 }}
           className="flex flex-col items-center"
         >
-
           {/* Punchy Compact Headline */}
           <motion.h2
             variants={revealUp}
